@@ -1,0 +1,355 @@
+$CATEGORY: RAs 4 i 5
+
+// Pregunta 1
+
+::RA4.a:: Quina és la finalitat principal d'un fitxer XSD en el context de documents XML?
+{
+~Defineix l'estil visual del document
+~Converteix XML en PDF
+=Valida l'estructura i el contingut d'un document XML
+~Encripta el contingut XML
+}
+
+// Pregunta 2
+::RA4.b:: Quines de les següents tecnologies estan relacionades amb la definició de documents XML? (Selecciona totes les correctes)
+{
+~%100%XSD
+~%100%DTD
+~%0%CSS
+~%0%NODEJS
+~%0%JPEG
+}
+
+// Pregunta 3
+::RA4.c:: En un document XML, quin símbol s'utilitza per a definir un atribut?
+{
+~\%
+~\#
+~@
+= No necessitem cap símbol
+}
+
+// Pregunta 4
+::RA4.d:: Quina estructura és correcta per a un document XML ben format?
+{
+~<element>Contingut
+~element>Contingut</element>
+=<element>Contingut</element>
+~<element>Contingut<element>
+}
+
+// Pregunta 5
+::RA4.e:: Quina eina s'utilitza per a validar un document XML contra un esquema XSD?
+{
+~Apache FOP
+~xsltproc
+=xmllint i algunes eines en línia
+~Es validen a l'XML en el propi navegador
+}
+
+// Pregunta 6
+::RA4.f:: En un fitxer XML, com s'associa un esquema XSD per a la seva validació?
+{
+~Mitjançant una instrucció <?xsl-stylesheet?>
+~Afegint un comentari <!-- schema -->
+=Amb l'atribut `xsi\:SchemaLocation`
+~No és possible associar un XSD a un XML
+}
+
+// Pregunta 7
+::RA4.g:: Quina eina de línia d'ordres s'utilitza per a aplicar una transformació XSLT?
+{
+~fop
+=xsltproc
+~xmllint
+~pdf2xml
+}
+
+// Pregunta 8
+::RA5.a:: Per què és important la conversió de documents en l'intercanvi d'informació?
+{
+~Per a reduir la mida dels fitxers
+=Per a garantir la compatibilitat entre sistemes diferents
+~Per a encriptar la informació
+~Per a millorar l'estètica del document
+}
+
+// Pregunta 9
+::RA5.b:: En quin àmbit s'utilitza habitualment la conversió de documents XML a PDF?
+{
+~En el desenvolupament de videojocs
+=En la generació de documents oficials i informes
+~En la creació de bases de dades
+~En la transmissió de senyals de ràdio
+}
+
+// Pregunta 10
+::RA5.c:: Quina tecnologia permet convertir documents XML en documents PDF mitjançant XSL-FO?
+{
+~xsltproc
+~xmllint
+=Apache FOP
+~Saxon
+}
+
+// Pregunta 11
+::RA5.d:: En una transformació XSLT, quin llenguatge s'utilitza per a seleccionar nodes dins d'un document XML?
+{
+~CSS
+=XPath
+~JSONPath
+~SQL
+}
+
+// Pregunta 12
+::RA5.e:: Quina és la funció principal d'un fitxer XSL en una transformació de documents?
+{
+~Definir l'esquema de validació
+=Transformar documents XML en altres formats com HTML o FO
+~Comprimir el contingut XML
+~Encriptar dades sensibles
+}
+
+// Pregunta 13
+::RA5.f:: Quines eines es poden utilitzar per a realitzar transformacions XSLT? (Selecciona totes les correctes)
+{
+~%100%xsltproc
+~%100%Saxon
+~%0%Photoshop
+~%100%Xalan
+~%0%Illustrator
+}
+
+// Pregunta 14
+::RA5.g:: Quina ordre s'utilitza per a generar un fitxer PDF a partir d'un fitxer FO amb Apache FOP?
+{
+~fop -xml input.xml -xsl style.xsl -pdf output.pdf
+~fop input.fo output.pdf
+~fop -fo input.fo -pdf output.pdf
+=Totes les respostes són correctes
+}
+
+// Pregunta 15
+::RA4.a:: Quina diferència hi ha entre un fitxer DTD i un fitxer XSD?
+{
+~Els DTD poden validar tipus de dades complexos, mentre que els XSD no
+=Els XSD permeten definir tipus de dades més específics i complexos que els DTD
+~Els DTD utilitzen sintaxi XML, mentre que els XSD no
+~No hi ha cap diferència significativa
+}
+
+// Pregunta 16
+::RA4.c:: En XPath, què selecciona l'expressió //alumne/nom?
+{
+~Tots els elements <alumne> que tenen un atribut nom
+=Els elements <nom> que són fills de qualsevol element <alumne>
+~Tots els elements <nom> en el document
+~Els elements <alumne> que són fills de qualsevol element <nom>
+}
+
+// Pregunta 17
+::RA4.d:: En un fitxer XML, com es representa un comentari?
+{
+~<!-- Aquest és un comentari --!>
+~<? Aquest és un comentari ?>
+=<!-- Aquest és un comentari -->
+~/* Aquest és un comentari */
+}
+
+// Pregunta 18
+::RA5.d:: En XSL-FO, quin element s'utilitza per a definir un paràgraf de text?
+{
+~<fo\:table>
+~<fo\:block-container>
+=<fo\:block>
+~<fo\:paragraph>
+}
+
+// Pregunta 19
+::RA5.f:: Quina eina de línia d'ordres s'utilitza per a aplicar una transformació XSLT?
+{
+~fop
+=xsltproc
+~xmllint
+~pdf2xml
+}
+
+// PREGUNTA 20
+::TO-DO XML:: En el fitxer `/index.js`, quin mètode es va utilitzar per transformar les dades d'un objecte JSON en un XML?
+{
+=Es concatenen les dades com a cadenes dins d'un `template literal` per formar manualment el XML
+~S'utilitza la funció `JSON.stringify()`
+~S'utilitza una llibreria com xml2js
+~S'utilitza un mètode natiu de Node per convertir directament JSON a XML
+}
+
+// PREGUNTA 21
+::TO-DO XML:: En el resultat del fitxer XML generat, quina etiqueta conté les dades dels mòduls seleccionats?
+{
+~<mòduls>
+~<modulacio>
+=<moduls>
+~<assignatures>
+}
+
+// PREGUNTA 22
+::TO-DO FO:: En la plantilla `matricula.xsl`, quin element s'utilitza per a repetir els mòduls en l'output final?
+{
+~<xsl\:apply-templates>
+~<xsl\:choose>
+=<xsl\:for-each>
+~<fo\:loop>
+}
+
+// PREGUNTA 23
+::TO-DO XPath:: En el `for-each` del XSL, quin és el camí XPath correcte per accedir als mòduls seleccionats?
+{
+~moduls//modul
+=matricula/moduls/modul
+~/matricula/modul
+~matricula/modul/text()
+}
+
+// PREGUNTA 24
+::TO-DO HTML:: Quin tipus de control s'ha utilitzat per a seleccionar el cicle formatiu en el formulari HTML?
+{
+~input type="text"
+~input type="radio"
+=select
+~checkbox
+}
+
+// PREGUNTA 25
+::TO-DO HTML:: Per generar la llista de mòduls a l'XML a partir del JSON què falta per afegir en els ___\: `$\{dades.moduls.map(a \=> `<modul>$\{a\}</modul>`)_____\}`
+{
+~No cal afegir res, ja és l'string que busquem
+=.join('\n')
+~.concatenate('\n')
+~.join('<br>')
+}
+
+// PREGUNTA 26
+::TO-DO JS:: Com s'obtenen els valors seleccionats dels mòduls al JavaScript client?
+{
+~Amb document.querySelector('input[name=moduls]').value
+~Amb el mètode get('moduls')
+=formData.getAll('moduls')
+~Amb event.target.moduls.value
+}
+
+// PREGUNTA 27
+::TO-DO JS:: En la funció `actualitzarModuls()`, per què s'utilitza l'operador `...` (spread) davant de `cursRadios`?
+{
+~Per convertir-lo en un objecte JSON
+=Per convertir el NodeList en un array i poder aplicar `.find()`
+~Per eliminar els radios no seleccionats
+~Per crear un objecte nou amb el mateix contingut
+}
+
+// PREGUNTA 28
+::TO-DO JS:: Quin és el propòsit del mètode `fetch('/enviar-matricula')`?
+{
+=Enviar les dades del formulari al servidor per generar el PDF
+~Validar el formulari al servidor
+~Descobrir els mòduls disponibles
+~Obrir un PDF predefinit
+}
+
+// PREGUNTA 29
+::TO-DO HTML:: En el formulari, per què s'utilitza `required` en la majoria d'inputs?
+{
+~Per afegir un estil CSS obligatori
+=Per forçar la validació del navegador abans d'enviar
+~Per capturar errors de servidor
+~Per mostrar els camps en majúscules
+}
+
+// PREGUNTA 30
+::TO-DO PDF:: Quina ordre utilitzem per generar el PDF a partir del fitxer FO?
+{
+=fop "uploads/matricula.fo" "uploads/matricula.pdf"
+~pdfgen -i matricula.fo -o matricula.pdf
+~xsltproc matricula.fo > matricula.pdf
+~convertFOtoPDF uploads/matricula.fo
+}
+
+// PREGUNTA 31
+::TO-DO XSLT:: Quina ordre es va usar per aplicar la transformació XSLT?
+{
+~fop -xsl matricula.xsl -xml matricula.xml
+=xsltproc -o "uploads/matricula.fo" "./xslt/matricula.xsl" "uploads/matricula.xml"
+~xsltgen -input matricula.xml -style matricula.xsl
+~xsltransform matricula.xml
+}
+
+// PREGUNTA 32
+::TO-DO API:: En quin format s'envien les dades des del client al servidor Express?
+{
+~application/x-www-form-urlencoded
+=application/json
+~multipart/form-data
+~text/xml
+}
+
+// PREGUNTA 33
+::TO-DO API:: En Express, amb quina expressió obtenim el JSON enviat pel client en una petició POST?
+{
+~req.params
+~req.query
+=req.body
+~req.headers
+}
+
+// PREGUNTA 34
+::TO-DO XSL:: A quin element FO s'afegeixen els blocs amb dades com el nom, cognoms, etc.?
+{
+~<fo\:header>
+=<fo\:table>
+~<fo\:canvas>
+~<fo\:section>
+}
+
+// PREGUNTA 35
+::TO-DO XSL:: En quin punt del fitxer `.xsl` s'estableix la mida de la pàgina del PDF?
+{
+~Dins del <fo\:page-sequence>
+=<fo\:simple-page-master> amb atributs `page-height` i `page-width`
+~Dins del <xsl\:template>
+~No s'especifica, depèn del navegador
+}
+
+// PREGUNTA 36
+::TO-DO XML/XPath:: Quina expressió XPath selecciona el nom de l'alumne?
+{
+~/alumne/nom
+=matricula/alumne/nom
+~alumne/nom
+~matricula/nom
+}
+
+// PREGUNTA 37
+::TO-DO JS:: En l'enviament del formulari, per a què s'utilitza el `blob()` en la resposta?
+{
+=Per obtenir el PDF com a fitxer descarregable
+~Per convertir les dades en JSON
+~Per netejar el formulari
+~Per enviar-lo a una altra API
+}
+
+// PREGUNTA 38
+::TO-DO HTML/JS:: Quina és la finalitat de `a.click()` en el codi JavaScript?
+{
+~Executar una animació CSS
+~Seleccionar un checkbox
+=Simular la descàrrega del fitxer PDF
+~Enviar el formulari de nou
+}
+
+// PREGUNTA 39
+::TO-DO reflexió final:: Quin dels següents elements és clau per aconseguir la separació entre dades i presentació?
+{
+=La transformació XSLT que converteix el XML (dades) en FO (presentació)
+~El formulari HTML amb inputs separats
+~L'ordre fetch que envia les dades
+~L'ús de Node.js per generar arxius
+}

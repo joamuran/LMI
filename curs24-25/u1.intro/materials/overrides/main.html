@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if page.url == "" %}
+    <div style="display: flex;">
+      <!-- Columna esquerra amb la imatge -->
+      <div style="flex: 33%; padding: 10px;">
+        <img src="img/portada.png" alt="Descripció de la imatge" style="width: 100%;">
+      </div>
+      <!-- Columna dreta amb el contingut de index.md -->
+      <div style="flex: 66%; padding: 10px;">
+        {{ page.content }}
+      </div>
+    </div>
+  {% else %}
+    <!-- Contingut per a altres pàgines -->
+    {{ super() }}
+  {% endif %}
+{% endblock %}

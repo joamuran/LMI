@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Targeta Usuari</title>
+    <script src="components/targeta3.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .formulari {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- El Web Component amb `slot` -->
+    <targeta-usuari id="targeta">
+        <targeta-nom>Jose</targeta-nom>
+        <targeta-carrec>Profe de LMI</targeta-carrec>
+    </targeta-usuari>
+
+    <!-- 🔹 Formulari per modificar el Web Component -->
+    <div class="formulari">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom">
+        <br>
+        <label for="descripcio">Descripció:</label>
+        <input type="text" id="descripcio">
+        <br>
+        <input type="button" id="updateBt" value="Actualitza">
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("updateBt").addEventListener("click", () => {
+                let nom = document.getElementById("nom").value;
+                let descripcio = document.getElementById("descripcio").value;
+                let targeta = document.getElementById("targeta");
+
+                // Canviem directament el contingut del `slot`
+                targeta.querySelector('[slot="nom"]').textContent = nom || "Usuari desconegut";
+                targeta.querySelector('[slot="descripcio"]').textContent = descripcio || "Sense descripció";
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+Diu que pose açò...
+
+const slotNom = targeta.shadowRoot.querySelector('slot[name="nom"]');
+const slotDescripcio = targeta.shadowRoot.querySelector('slot[name="descripcio"]');
+
+const nomNode = slotNom?.assignedNodes()[0]; // Agafa el primer node assignat al slot
+const descripcioNode = slotDescripcio?.assignedNodes()[0];
+
+if (nomNode) nomNode.textContent = nom || "Usuari desconegut";
+if (descripcioNode) descripcioNode.textContent = descripcio || "Sense descripció";

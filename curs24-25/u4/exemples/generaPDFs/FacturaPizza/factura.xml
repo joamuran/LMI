@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factura>
+    <id>001</id>
+    <data>2025-03-30</data>
+    <client>
+        <nom>Joan Pérez</nom>
+        <adreça>Carrer Major, 24</adreça>
+    </client>
+    <articles>
+        <article>
+            <nom>Pizza Margarita</nom>
+            <preu>9.99</preu>
+            <quantitat>1</quantitat>
+            <total>9.99</total>
+        </article>
+        <article>
+            <nom>Pizza Quattro Formaggi</nom>
+            <preu>12.99</preu>
+            <quantitat>2</quantitat>
+            <total>25.98</total>
+        </article>
+    </articles>
+    <total>35.97</total>
+</factura>

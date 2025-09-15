@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- Templates -->
+
+<template id="missatge-template">
+    <style>
+        h2 {
+            color: darkblue;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <h2>Benvingut a LMI!</h2>
+</template>
+
+<!-- Fi templates -->
+
+<body>
+    <missatge-benvinguda id="missatge" nom="Jose"></missatge-benvinguda>
+    <input type="text" id="name">
+    <input type="button" id="updateBt" value="Actualitza">
+    <script src="components/missatge.js"></script>
+    <script>
+        // Què estem fent a les següents línies?
+        document.addEventListener("DOMContentLoaded", (event) => {
+            document
+                .getElementById("updateBt")
+                .addEventListener("click", (event)=>{
+                    let name=document.getElementById("name").value;
+                    let msgComponent=document.getElementById("missatge");                    
+                    msgComponent.setAttribute("nom", name);
+                });
+        });
+    </script>
+
+</body>
+
+</html>

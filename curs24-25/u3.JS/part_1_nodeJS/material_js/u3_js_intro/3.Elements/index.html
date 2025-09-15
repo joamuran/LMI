@@ -1,0 +1,773 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../2.generalitats/">
+      
+      
+        <link rel="next" href="../4.Funcions/">
+      
+      
+      <link rel="icon" href="../img/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>3. Elements del llenguatge - Manipulació de documents web: Javascript</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://joamuran.net/curs24_25/css/material-just.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#variables" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Manipulació de documents web: Javascript" class="md-header__button md-logo" aria-label="Manipulació de documents web: Javascript" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Manipulació de documents web: Javascript
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. Elements del llenguatge
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Manipulació de documents web: Javascript" class="md-nav__button md-logo" aria-label="Manipulació de documents web: Javascript" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    Manipulació de documents web: Javascript
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.generalitats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Generalitats de Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    3. Elements de llenguatge
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    3. Elements de llenguatge
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadors
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.Funcions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Funcions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.PrgEstructurada/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Programació Estructurada
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.POO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Programació Orientada a Objectes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exercicis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercicis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadors
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  
+    <!-- Contingut per a altres pàgines -->
+    
+                  
+
+
+  <h1>3. Elements de llenguatge</h1>
+
+<h3 id="variables">Variables</h3>
+<p>No és necessari declarar variables en JavaScript, encara que és altament recomanable. Per a declarar una variable fem:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor</span><span class="p">;</span>
+</span></code></pre></div>
+<p>També es pot utilitzar <code>var</code> en lloc de <code>let</code>, però des de la versió ES2015, la recomanació és utilitzar <code>let</code>.</p>
+<h4 id="el-mode-estrict">El mode estrict</h4>
+<p>JavaScript permet treballar en mode <em>strict</em>, que obliga a declarar les variables abans d'utilitzar-les.</p>
+<p>Per exemple, el següent script (saluda.js):</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jose&quot;</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hola &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">nom</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Funcionaria correctament:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>node<span class="w"> </span>saluda.js
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Hola<span class="w"> </span>Jose
+</span></code></pre></div>
+<p>Però si habilitem el mode estricte:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jose&quot;</span><span class="p">;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hola &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">nom</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Mostraria el següent error:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/tmp/prova1.js:3
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nv">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jose&quot;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w"> </span>^
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>ReferenceError:<span class="w"> </span>nom<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>defined
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span>at<span class="w"> </span>Object.&lt;anonymous&gt;<span class="w"> </span><span class="o">(</span>/tmp/saluda.js:3:4<span class="o">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span>...
+</span></code></pre></div>
+<p>El treballar en mode estricte ens obliga a definir variables, la qual cosa facilita detectar errors en escriure el nom d'aquestes.</p>
+<h4 id="el-nom-de-les-variables">El nom de les variables</h4>
+<ul>
+<li>El nom de les variables pot contindre qualsevol caràcter alfanumèric, a més del símbol <code>$</code> i <code>_</code>.</li>
+<li>Poden començar per qualsevol caràcter, <code>$</code> o <code>_</code>, però no per un número.</li>
+<li>El nom de les variables sol indicar-se en format <strong>CamelCase</strong> (la primera lletra de cada paraula en majúscula i la resta en minúscula).</li>
+</ul>
+<h4 id="tipus-de-variables-i-assignacio-dinamica">Tipus de variables i assignació dinàmica</h4>
+<p>Una variable també pot ser inicialitzada en la declaració amb qualsevol valor o amb el resultat d'una expressió.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">valor</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">expressió</span><span class="p">];</span>
+</span></code></pre></div>
+<p>Una variable en JavaScript emmagatzema dades d'un tipus concret en un moment donat. Mitjançant l'<strong>assignació dinàmica de tipus</strong>, el tipus de dada que emmagatzema la variable pot canviar en temps d'execució. És a dir, el tipus d'una variable es defineix de manera dinàmica en el moment de la seua assignació, no de la declaració.</p>
+<p>Les variables poden ser:</p>
+<ul>
+<li><strong>Numèriques (number)</strong>: Emmagatzema valors enters o decimals (amb el caràcter <code>.</code> per a separar la part entera de la decimal).</li>
+<li><strong>Text (string)</strong>: Emmagatzema una llista de caràcters entre cometes, ja siguen simples o dobles. Si el text conté cometes, cal anar amb compte de no utilitzar internament les cometes utilitzades per a definir la cadena de text o bé escapant aquestes:</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Aquesta frase utilitza &#39;cometes simples&#39;&quot;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Aquesta frase utilitza &quot;cometes dobles escapades&quot;&#39;</span>
+</span></code></pre></div>
+<p>En les cadenes de text també podem incloure:
+  * Salt de línia: <code>\n</code>
+  * Tabulador: <code>\t</code>
+  * Barra inclinada: <code>\\</code>
+  * Cometes escapades: <code>\"</code> o <code>\'</code></p>
+<p><strong>Conversió de tipus</strong></p>
+<p>La conversió de tipus es realitza de manera automàtica. En cas d'ambigüitat, s'utilitzen prioritats.</p>
+<p><strong>Exemple</strong>: <code>'10'+3</code> suma un string i un number. En aquest cas, té prioritat la cadena de caràcters, per la qual cosa el <em>number</em> 3 es converteix a <em>string</em> '3'. En canvi, quan es tracta del <code>+</code> unari, només s'aplica a nombres, per la qual cosa <code>+ '20'</code> representa el número 20.</p>
+<p>Exemples addicionals:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>13 + 7 =&gt; 20
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>&quot;13&quot; + &quot;7&quot; =&gt; &quot;137&quot;
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>&quot;13&quot; + 7 =&gt; &quot;137&quot;
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>+&quot;13&quot; + 7 =&gt; 20
+</span></code></pre></div>
+<ul>
+<li><strong>Tipus lògic</strong>: Pot contindre els valors <em>true</em> i <em>false</em>.</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">itemSeleccionat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">mostrar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span></code></pre></div>
+<ul>
+<li><strong>Valors null i undefined</strong>: Quan una variable no s'ha definit, el tipus és <em>undefined</em>. En canvi, quan volem referir-nos al valor nul, utilitzem <em>null</em>, sense cometes.</li>
+</ul>
+<p><strong><em>Typeof</em></strong></p>
+<p>Per a saber el tipus de dada que conté una variable en un moment donat, podem utilitzar l'operador <code>typeof</code>:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">&gt;</span><span class="w"> </span><span class="ow">typeof</span><span class="p">(</span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="c1">// &#39;number&#39;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="o">&gt;</span><span class="w"> </span><span class="ow">typeof</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// &#39;string&#39;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="o">&gt;</span><span class="w"> </span><span class="ow">typeof</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="c1">// &#39;boolean&#39;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="o">&gt;</span><span class="w"> </span><span class="ow">typeof</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="w"> </span><span class="c1">// &#39;undefined&#39;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="o">&gt;</span><span class="w"> </span><span class="ow">typeof</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="c1">// &#39;object&#39;</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="o">&gt;</span><span class="w"> </span><span class="ow">typeof</span><span class="p">({</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jose&quot;</span><span class="p">})</span><span class="w"> </span><span class="c1">// &#39;object&#39;</span>
+</span></code></pre></div>
+<h4 id="vectors-i-json">Vectors i JSON</h4>
+<p>Els vectors són col·leccions de valors/elements, que poden ser del mateix tipus o de tipus diferents (a diferència d'altres llenguatges, on els tipus han de ser homogènics).</p>
+<p>Per a definir un vector, utilitzem els caràcters <code>[ ]</code> al principi i al final, i les comes (,) per a separar elements.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">nom_vector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">valor1</span><span class="p">,</span><span class="w"> </span><span class="nx">valor2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="nx">valorN</span><span class="p">];</span>
+</span></code></pre></div>
+<p><strong>Exemples:</strong></p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">dies_setmana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;dilluns&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dimarts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dimecres&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dijous&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;divendres&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dissabte&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;diumenge&quot;</span><span class="p">];</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">ex_vector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cadena1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">num1</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cadena2&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cadena1_vector1&quot;</span><span class="p">]];</span>
+</span></code></pre></div>
+<p>Per a accedir als elements, indiquem la posició en el vector (la posició inicial és 0):</p>
+<ul>
+<li><strong>Consulta</strong>: <code>var avui = dies_setmana[1];</code></li>
+<li><strong>Assignació</strong>: <code>ex_vector[1] = "cadena3";</code></li>
+</ul>
+<p>Un vector buit es pot definir inicialitzant-lo a buit o creant un nou objecte de la classe Array:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nx">ex_vector2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nx">ex_vector3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="p">();</span>
+</span></code></pre></div>
+<p>Els elements <em>JSON</em> (JavaScript Object Notation) són una forma compacta d'emmagatzemar i transmetre informació mitjançant parells clau-valor.</p>
+<p>Els tipus de dades que podem representar en JSON són:</p>
+<ul>
+<li><strong>Nombres</strong>, tant enters com decimals.</li>
+<li><strong>Cadenes</strong>, expressades entre cometes i amb la possibilitat d'incloure seqüències d'escapada.</li>
+<li><strong>Booleans</strong>, per a representar els valors <em>true</em> i <em>false</em>.</li>
+<li><strong>Null</strong>, per a representar el valor nul.</li>
+<li><strong>Array</strong>, per a llistes de zero o més valors de qualsevol tipus, entre claudàtors i separats per comes.</li>
+<li><strong>Objectes</strong>, com a col·leccions de parells <code>&lt;clau&gt;:&lt;valor&gt;</code>, separats per comes i entre claus.</li>
+</ul>
+<p>Exemple de notació JSON:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w"> </span><span class="nt">&quot;curs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">   </span><span class="p">{</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">     </span><span class="nt">&quot;nom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Accés a Dades&quot;</span><span class="p">,</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">     </span><span class="nt">&quot;hores&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">     </span><span class="nt">&quot;qualificació&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">8.45</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">   </span><span class="p">},</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">   </span><span class="p">{</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">     </span><span class="nt">&quot;nom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Programació de serveis i processos&quot;</span><span class="p">,</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">     </span><span class="nt">&quot;hores&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">     </span><span class="nt">&quot;qualificació&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">9.0</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w"> </span><span class="p">]</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>JavaScript suporta la manipulació d'elements JSON de manera nativa, de manera que no necessitem cap llibreria per a utilitzar aquest format.</p>
+<h4 id="declaracio-de-constants">Declaració de constants</h4>
+<p>Quan no desitgem que canvie el valor d'una variable o volem definir un valor global immutable, es recomana utilitzar la paraula reservada <code>const</code> en lloc de <code>let</code>. Per a les constants globals, es recomana usar majúscules.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.1416</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="operadors">Operadors</h3>
+<p>Les variables es combinen entre si, formant expressions mitjançant els operadors. Aquestes expressions es poden avaluar, donant lloc a un nou valor, que pot utilitzar-se per a prendre decisions en un script, o per assignar-lo a noves variables.</p>
+<p>Els operadors poden ser d'assignació, aritmètics, lògics o relacionals.</p>
+<h4 id="operador-dassignacio">Operador d'assignació (=)</h4>
+<p>S'utilitza per assignar a una variable un valor o expressió.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">variable1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">expressió</span><span class="p">;</span>
+</span></code></pre></div>
+<h4 id="operadors-aritmetics">Operadors aritmètics</h4>
+<p>Els operadors aritmètics treballen amb valors de tipus numèric per a obtindre altres valors numèrics. A més dels habituals de <em>suma (+)</em>, <em>resta (-)</em>, <em>multiplicació (</em>)<em>, </em>divisió (/)<em> i </em>rest de la divisió (%)*, hi ha els següents operadors:</p>
+<ul>
+<li><strong>Operadors d'increment (++) i decrement (--)</strong>: incrementen o decrementen el valor d'una variable, amb diferent significat segons si es col·loquen davant o darrere de la variable.</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1">// c = 5</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1">// a = 3</span>
+</span></code></pre></div>
+<p>No és el mateix que:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">c2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a2</span><span class="o">++</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b2</span><span class="p">;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1">// c2 = 4</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="c1">// a2 = 3</span>
+</span></code></pre></div>
+<ul>
+<li><strong>Suma/resta combinada (+= i -=)</strong>: igual que en C i Java, podem utilitzar expressions com <code>a += 3</code> per simplificar l'expressió <code>a = a + 3</code>.</li>
+</ul>
+<h4 id="operadors-logics">Operadors lògics</h4>
+<p>S'apliquen sobre valors lògics i retornen un valor també lògic.</p>
+<ul>
+<li><strong>Negació</strong>: <code>!</code></li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="o">!</span><span class="nx">a</span><span class="p">;</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="c1">// false</span>
+</span></code></pre></div>
+<p>Quan s'aplica a valors no lògics, el significat és el següent: el valor numèric 0 i la cadena de text buida es converteixen al valor lògic <em>false</em>, mentre que un nombre diferent de 0 i una cadena no buida es consideren <em>true</em>.</p>
+<ul>
+<li><strong>Operador and (&amp;&amp;)</strong>: el resultat és cert si els dos operands ho són.</li>
+<li><strong>Operador or (||)</strong>: el resultat és cert si un dels dos operands ho és.</li>
+</ul>
+<h4 id="operadors-relacionals">Operadors relacionals</h4>
+<p>Comparen valors de qualsevol tipus i ens proporcionen un valor de tipus lògic.</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Semàntica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&gt;</code></td>
+<td>Major que</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Menor que</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>Major o igual</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>Menor o igual</td>
+</tr>
+<tr>
+<td><code>==</code></td>
+<td>Igual que (només valor) <br> <code>5 == "5" ==&gt; true</code></td>
+</tr>
+<tr>
+<td><code>===</code></td>
+<td>Igual que, en valor i tipus <br> <code>5 === "5" ==&gt; false</code></td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>Distint de</td>
+</tr>
+<tr>
+<td><code>!==</code></td>
+<td>Distint, o de tipus diferent</td>
+</tr>
+</tbody>
+</table>
+<p>Quan es treballa amb cadenes, els operadors relacionals comparen, lletra a lletra, els caràcters ASCII de dues cadenes, d'esquerra a dreta.</p>
+<h4 id="altres-operadors">Altres operadors</h4>
+<p>A més dels operadors tradicionals, JavaScript proporciona altres operadors:</p>
+<ul>
+<li><strong>Operador condicional ternari</strong>: permet assignar un valor a una variable basant-se en certa condició:</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nx">nomVariable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">condició</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">valor2</span><span class="p">;</span>
+</span></code></pre></div>
+<p>Per exemple:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">major_edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">edat</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">18</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Menor d&#39;edat&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Major d&#39;edat&quot;</span><span class="p">;</span>
+</span></code></pre></div>
+<ul>
+<li><strong>Operador <code>typeof</code></strong>: com ja hem comentat abans, aquest operador obté el tipus de valor d'una variable.</li>
+</ul>
+<hr />
+<p>Si necessites més traducció o alguna altra revisió, ací estic!</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

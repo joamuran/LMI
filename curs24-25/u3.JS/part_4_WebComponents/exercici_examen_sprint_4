@@ -1,0 +1,10 @@
+A partir dels dissenys ja corregits sobre l'aplicació de la pizzeria, i la vostra pròpia aplicació per encarregat pizzes, es demana.
+
+* Incorporar la possibilitat d'afegir begudes al carret. Per a això crea la classe Beguda i un webComponent per a la targeta de les begudes, i modifica la classe d'accés al servei per tal d'obtenir les begudes. Recorda que l'endpoint per obtenir begudes es troba a `https://pizza-rest-server-production.up.railway.app/api/pizzeria/beguda`.
+
+* Afig la possibilitat d'envia el carret (Comanda) al servidor. Per a això, si tens el carret implementat, envia el seu contingut, i si no l'has implementat, defineix una Comanda arbitrària i envia-la. Comproveu les precondicions d'aquest cas d'ús abans d'enviar el carret, i mostreu els missatges corresponents (amb l'hora de recepció i el número de comanda si és correcte o un missatge d'error si no).  Quan rebeu la resposta, si és positiva, esborreu el contingut del carret.
+
+### Consideracions
+
+*  No heu d'incorporar la possibilitat per veure l'històric de comandes, amb esborrar el carret quan es rep la resposta és suficient.
+* La petició per enviar el carret ha de ser de tipus POST, i proporcionar-li la comanda en format d'String JSON. L'adreça d'aquest endpoint és: `https://pizza-rest-server-production.up.railway.app/api/pizzeria/order`

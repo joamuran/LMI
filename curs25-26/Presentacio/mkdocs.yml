@@ -1,0 +1,54 @@
+site_name: Llenguatges de marques i sistemes de gestió de la informació (LMSGI)
+
+nav:
+  - "Inici": 'index.md'
+  - "1. Presentació del mòdul": '1.Presentacio.md'
+  - "2. Objectiu del mòdul. Resultats d'aprenentatge i criteris d'avaluació": '2.Objectius.md'
+  - "3. Continguts": '3.Continguts.md'
+  - "4. Metodologia": '4.Metodologia.md'
+  - "5. Avaluació": '5.Avaluacio.md'
+  
+theme: 
+  name: material
+  logo: img/logo.svg
+  palette:
+    primary: 'light blue'
+  features:
+    - content.code.copy # PEr copiar codi
+
+extra_css:
+  - css/styles.css
+
+plugins:
+  - search
+  - glightbox   # Per vore les imatges en gran quan fas clic en elles.
+  - macros      # Per suporatar macros i afegir el nav a la pàgina principal  
+#  - exclude-unused-files:
+#      file_types_to_check: ["png", "jpg", "jpeg", "gif"]
+#      enabled: true
+  
+markdown_extensions:
+  - attr_list           # Permet incorporar atributs a les imatges { width=100px }
+  - md_in_html # Junt a attr_list per afegir peus a les imatges
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - toc:
+      baselevel: 2
+      toc_depth: 3
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      baselevel: 2
+      toc_depth: 3
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+

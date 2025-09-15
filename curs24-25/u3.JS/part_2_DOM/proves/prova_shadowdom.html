@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="contenidor"></div>
+    <script>
+        const host = document.getElementById('contenidor'); // Seleccionem el contenidor
+        const shadowRoot = host.attachShadow({ mode: 'closed' }); // Creem l'arrel Shadow
+    
+        shadowRoot.innerHTML = `
+            <style>
+                button {
+                    background-color: blue;
+                    color: white;
+                    border: none;
+                    padding: 10px;
+                    cursor: pointer;
+                }
+            </style>
+            <button>Fes clic</button>
+        `;
+    
+        // Afegim funcionalitat al botó dins del Shadow DOM
+        shadowRoot.querySelector('button').addEventListener('click', () => {
+            alert('Botó dins del Shadow DOM!');
+        }, { once: true });
+
+     
+    </script>
+
+    
+    <!--script>
+        // Creem un element div que farà d'amfitrió (host)
+        const host = document.createElement('div');
+
+        // Creem un arrel Shadow dins del host amb attachShadow
+        // Amb el paràmetre mode indiquem si permetem l'accés al 
+        // Shadow DOM (mode:open) o no (mode:closed), sent 
+        // només gestionable pel navegador 
+        const shadowRoot = host.attachShadow({ mode: 'open' });
+
+
+        // Ara afegim HTML i CSS al Shadow DOM, utilitzant innerHTML
+        // Aquests estils CSS encapsulats només afecten el contingut 
+        // del Shadow DOM, no altres elements del DOM global.
+
+        shadowRoot.innerHTML = `
+   <style>
+       /* Estils encapsulats, que només afecten al Shadow DOM */
+       p { color: red; font-weight: bold; }
+   </style>
+   <p>Aquest paràgraf està dins del Shadow DOM</p>`;
+
+        // Afegim l'element amfitrió del Shadow Root al DOM global.
+        // El contingut d'aquest serà visible, però completament 
+        // independent del DOM extern
+        
+        document.body.appendChild(host);
+
+        // Afegim un paràgraf amb l'estil predeterminat
+        document.body.insertAdjacentHTML('beforeend', '<p>Paràgraf amb estil normal</p>');
+
+    </script-->
+</body>
+
+</html>

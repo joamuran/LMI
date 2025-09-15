@@ -1,0 +1,46 @@
+site_name: Caracterització dels llenguatges de marques
+
+nav:
+  - "Inici": 'index.md'
+  - "1. Classificació i característiques": '1.classificacio_característiques.md'
+  - "2. Estructura i sintaxi": '2.estructura_sintaxi.md'
+  - "3. Eines d'edició": '3.eines_edicio.md'
+  - "4. Elaboració de documents ben formats": '4.documents_ben_formats.md'
+  - "5. Espais de noms": '5.espais_noms.md'
+  - "6. Altres llenguatge de marques": '6.AltresLlenguatges.md'
+  - "7. Introducció a Markdown": '7.Markdown.md' 
+  
+theme:
+  name: 'material'
+  custom_dir: 'overrides'
+  logo: 'img/logo.svg'
+  favicon: 'img/logo.svg'
+  features:
+    - content.code.copy # PEr copiar codi
+  palette:
+    primary: white
+
+
+#extra_css:
+#  - https://joamuran.net/curs24_25/css/material-just.css
+
+plugins:
+  - search
+  - glightbox   # Per vore les imatges en gran quan fas clic en elles.
+  # - pandoc
+
+markdown_extensions:
+  - attr_list           # Permet incorporar atributs a les imatges { width=100px }
+  - md_in_html # Junt a attr_list per afegir peus a les imatges
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - toc:
+      baselevel: 2
+      toc_depth: 3

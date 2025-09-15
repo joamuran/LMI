@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulari d'Inscripció</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        button {
+            display: block;
+            margin: 10px 0;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="range"] {
+            width: calc(100% - 20px);
+            margin: 10px auto;
+        }
+
+        button {
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Formulari d'Inscripció a l'Esdeveniment</h1>
+    <p>Ompliu aquest formulari per registrar-vos al nostre esdeveniment.</p>
+
+    <form id="formulari" action="" method="POST" enctype="multipart/form-data">
+        <!-- Dades personals -->
+        <fieldset>
+            <legend>Dades Personals</legend>
+
+            <label for="nom">Nom complet *</label>
+            <input type="text" id="nom" name="nom" required pattern="[A-Za-z\s]+" placeholder="Exemple: Maria Pérez">
+
+            <label for="email">Correu electrònic *</label>
+            <input type="email" id="email" name="email" required placeholder="exemple@mail.com">
+
+            <label for="telefon">Telèfon</label>
+            <input type="tel" id="telefon" name="telefon" pattern="[0-9]{9}" placeholder="Exemple: 612345678">
+
+            <label for="web">Pàgina web personal (opcional)</label>
+            <input type="url" id="web" name="web" placeholder="https://exemple.com">
+        </fieldset>
+
+        <!-- Informació sobre l'esdeveniment -->
+        <fieldset>
+            <legend>Detalls de l'Esdeveniment</legend>
+
+            <label for="data-naixement">Data de naixement *</label>
+            <input type="date" id="data-naixement" name="data-naixement" min="1900-01-01" max="2025-12-31" required>
+
+            <label for="hora-arribada">Hora prevista d'arribada</label>
+            <input type="time" id="hora-arribada" name="hora-arribada">
+
+            <label for="preferencies">Color de preferència</label>
+            <input type="color" id="preferencies" name="preferencies" value="#0000ff">
+
+            <label for="curs">Selecciona el curs d'interès *</label>
+            <select id="curs" name="curs" required>
+                <option value="">-- Tria un curs --</option>
+                <option value="programacio">Programació Avançada</option>
+                <option value="disseny">Disseny d'Interfaces</option>
+                <option value="ciberseguretat">Ciberseguretat</option>
+            </select>
+
+            <label for="nivell">Nivell d'interès en el curs:</label>
+            <input type="range" id="nivell" name="nivell" min="0" max="10" step="1" value="5">
+        </fieldset>
+
+        <!-- Fitxers adjunts -->
+        <fieldset>
+            <legend>Fitxers Adjuntats</legend>
+
+            <label for="cv">Puja el teu CV (PDF o DOCX)</label>
+            <input type="file" id="cv" name="cv" accept=".pdf,.docx">
+
+            <label for="imatge">Foto de perfil (opcional)</label>
+            <input type="file" id="imatge" name="imatge" accept=".jpg,.png,.jpeg">
+        </fieldset>
+
+        <!-- Botons -->
+        <button type="submit">Enviar Formulari</button>
+        <button type="reset">Restablir Formulari</button>
+    </form>
+
+</body>
+
+</html>

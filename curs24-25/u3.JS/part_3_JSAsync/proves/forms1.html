@@ -1,0 +1,50 @@
+<html>
+
+<body>
+    <form id="altaAlumne">
+        <label for="nomAlumne">Nom (*):</label>
+        <input type="text" id="nomAlumne" required />
+
+        <label for="email">Correu electrònic (*):</label>
+        <input type="email" id="email" required />
+
+        <input type="submit" value="Enviar" />
+
+        <input type="text" id="nomAlumne2" pattern="[A-Za-z\s]+" required />
+        <input type="email" id="email2"  required />
+        <input type="date" id="data"  required />
+    </form>
+
+    <div id="errors"></div>
+
+    <script>
+        document.getElementById('altaAlumne').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const errors = [];
+            const nom = document.getElementById('nomAlumne').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            // Validació del nom
+            if (!/^[A-Za-z\s]+$/.test(nom)) {
+                errors.push('El nom només pot contenir lletres.');
+            }
+
+            // Validació del correu electrònic
+            if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(email)) {
+                errors.push('El correu electrònic no és vàlid.');
+            }
+
+            // Mostrar errors
+            const errorsDiv = document.getElementById('errors');
+            errorsDiv.innerHTML = errors.join('<br>');
+
+            // Si no hi ha errors, enviar el formulari
+            if (errors.length === 0) {
+                alert('Formulari enviat correctament!');
+            }
+        });
+    </script>
+</body>
+
+</html>

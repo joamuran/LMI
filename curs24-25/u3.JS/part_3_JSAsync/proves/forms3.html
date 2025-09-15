@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generació Dinàmica de Formularis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        select {
+            margin: 10px 0;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Generació Dinàmica de Formularis</h1>
+    <form id="formulari-moduls">
+        <!-- Els selects es generaran dinàmicament aquí -->
+    </form>
+
+    <script>
+        // Objecte amb els cursos i mòduls
+        const cursos = {
+            DAM1: ["PRG", "BD", "SI", "LMI", "EDD", "IPO", "ANG", "PI"],
+            DAM2: ["AD", "DI", "PSP", "PMDM", "SGI", "IPO2", "SSP", "DSP","PI"]
+        };
+
+        // Funció per generar un <select> amb opcions
+        function crearSelect(id, opcions) {
+            const select = document.createElement("select");
+            select.id = id;
+            select.name = id;
+
+            // Opció inicial per defecte
+            const optDefecte = document.createElement("option");
+            optDefecte.value = "";
+            optDefecte.textContent = `-- Selecciona una opció --`;
+            select.appendChild(optDefecte);
+
+            // Crear opcions a partir del vector proporcionat
+            opcions.forEach(opcio => {
+                const option = document.createElement("option");
+                option.value = opcio;
+                option.textContent = opcio;
+                select.appendChild(option);
+            });
+
+            return select;
+        }
+
+        // Funció per omplir els mòduls segons el curs seleccionat
+        function omplirModuls(cursSeleccionat) {
+            const selectModuls = document.getElementById("modul");
+
+            // Neteja el <select> de mòduls
+            selectModuls.innerHTML = "";
+
+            if (cursSeleccionat && cursos[cursSeleccionat]) {
+                cursos[cursSeleccionat].forEach(modul => {
+                    const option = document.createElement("option");
+                    option.value = modul;
+                    option.textContent = modul;
+                    selectModuls.appendChild(option);
+                });
+            }
+        }
+
+        // Generar els selects al formulari
+        function generarFormulari() {
+            const formulari = document.getElementById("formulari-moduls");
+
+            // Crear el <select> de cursos
+            const selectCursos = crearSelect("curs", Object.keys(cursos));
+            formulari.appendChild(selectCursos);
+
+            // Crear un <select> buit per als mòduls
+            const selectModuls = crearSelect("modul", []);
+            formulari.appendChild(selectModuls);
+
+            // Associar esdeveniment per actualitzar els mòduls segons el curs seleccionat
+            selectCursos.addEventListener("change", (event) => {
+                const cursSeleccionat = event.target.value;
+                omplirModuls(cursSeleccionat);
+            });
+        }
+
+        // Inicialitzar la generació del formulari quan es carregue la pàgina
+        document.addEventListener("DOMContentLoaded", generarFormulari);
+    </script>
+</body>
+</html>

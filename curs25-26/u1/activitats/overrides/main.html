@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if page.url == "" %}
+    
+      <!-- Columna esquerra amb la imatge -->
+      <!-- Columna dreta amb el contingut de index.md -->
+      
+        {{ page.content }}
+      
+    
+  {% else %}
+    <!-- Contingut per a altres pàgines -->
+    {{ super() }}
+  {% endif %}
+{% endblock %}

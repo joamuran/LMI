@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="div1">
+        <p id="p1">Paràgraf de prova
+            <strong id="s1">Feu clic ací</strong>
+        </p>
+    </div>
+
+    <a href="https://www.google.com" id="link1">Vés al buscador de Google</a>
+
+    <script>
+        document.body.addEventListener('click', () => console.log('Capturing en <body>'), true);
+        document.body.addEventListener('click', () => console.log('Bubbling en <body>'), false);
+
+        document.getElementById('div1').addEventListener('click', () => console.log('Capturing en #div1'), true);
+        document.getElementById('div1').addEventListener('click', () => console.log('Bubbling en #div1'), false);
+
+        document.getElementById('p1').addEventListener('click', () => console.log('Capturing en #p1'), true);
+        document.getElementById('p1').addEventListener('click', () => console.log('Bubbling en #p1'), false);
+
+        document.getElementById('s1').addEventListener('click', () => {
+            console.log('Capturing en #s1');
+            //event.stopPropagation();
+            //event.stopImmediatePropagation();
+        }, true);
+
+
+        document.getElementById('s1').addEventListener('click', () => {
+            console.log('Segon gestor. Capturing en #s1.');
+        }, true);
+
+
+        document.getElementById('s1').addEventListener('click', () => console.log('Bubbling en #s1'), false);
+
+        document.getElementById("link1").addEventListener("click", (event) => {
+            event.preventDefault();
+            window.location.href = "https://bing.com";
+        });
+
+        document.querySelector('#s1').addEventListener('click', (event) => {
+            console.log('Tipus d’esdeveniment:', event.type);         // "click"
+            console.log('Element objectiu:', event.target);          // El botó clicat
+            console.log('Esdeveniment propagable:', event.bubbles);  // true
+        });
+
+
+        document.addEventListener('click', (event) => {
+            event.preventDefault();
+            console.log('Posició X:', event.clientX);
+            console.log('Posició Y:', event.clientY);
+            console.log('Botó clicat:', event.button); // 0 (esquerre), 1 (central), 2 (dret)
+        });
+
+        document.addEventListener('keydown', (event) => {
+            console.log('Tecla premuda:', event.key);  // "Enter"
+            console.log('Codi de tecla:', event.code); // "KeyA"
+            console.log('ALT premut:', event.altKey); // false
+        });
+
+    </script>
+
+</body>
+
+</html>

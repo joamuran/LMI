@@ -1,0 +1,755 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="img/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>Creació d'un lloc web estàtic amb mkdocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://joamuran.net/curs24_25/css/material-just.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#creacio-dun-lloc-web-estatic-amb-mkdocs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Creació d&#39;un lloc web estàtic amb mkdocs" class="md-header__button md-logo" aria-label="Creació d'un lloc web estàtic amb mkdocs" data-md-component="logo">
+      
+  <img src="img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Creació d'un lloc web estàtic amb mkdocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Creació d&#39;un lloc web estàtic amb mkdocs" class="md-nav__button md-logo" aria-label="Creació d'un lloc web estàtic amb mkdocs" data-md-component="logo">
+      
+  <img src="img/logo.svg" alt="logo">
+
+    </a>
+    Creació d'un lloc web estàtic amb mkdocs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacio-dun-lloc-web-estatic-amb-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació d'un lloc web estàtic amb MkDocs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creació d'un lloc web estàtic amb MkDocs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduccio-a-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducció a MkDocs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-a-que-sutilitza" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per a què s'utilitza?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#al-lio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Al lio!
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Al lio!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creacio-dun-projecte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació d'un Projecte
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-del-contingut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura del contingut
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualitzacio-del-lloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualització del lloc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ara-si-mans-a-lobra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ara sí... mans a l'obra
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasca-a-realitzar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tasca a realitzar
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacio-dun-lloc-web-estatic-amb-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació d'un lloc web estàtic amb MkDocs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creació d'un lloc web estàtic amb MkDocs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduccio-a-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducció a MkDocs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-a-que-sutilitza" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per a què s'utilitza?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#al-lio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Al lio!
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Al lio!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creacio-dun-projecte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació d'un Projecte
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-del-contingut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura del contingut
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualitzacio-del-lloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualització del lloc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ara-si-mans-a-lobra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ara sí... mans a l'obra
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasca-a-realitzar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tasca a realitzar
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  
+    
+      <!-- Columna esquerra amb la imatge -->
+      <!-- Columna dreta amb el contingut de index.md -->
+      
+        <style>
+  .centrat{
+    background-color: var(--md-accent-fg-color);
+    /*color: var(--mdSi-default-fg-color--lighter) !important;*/
+    color: #ffffff !important;
+    text-align: center !important;
+    display: block !important;
+    width: 200px !important;
+    margin: 0 auto !important;
+  }
+  body{
+    background-image: none !important;
+  }
+
+  .md-header{
+    display: none;
+  }
+</style>
+
+<h2 id="creacio-dun-lloc-web-estatic-amb-mkdocs">Creació d'un lloc web estàtic amb MkDocs</h2>
+<h3 id="introduccio-a-mkdocs">Introducció a MkDocs</h3>
+<p>MkDocs és un generador de llocs web estàtics dissenyat per crear documentació de projectes de manera senzilla i eficient. Utilitza el llenguatge de marcat lleuger Markdown per escriure el contingut i YAML per configurar el lloc. </p>
+<h3 id="per-a-que-sutilitza">Per a què s'utilitza?</h3>
+<p>MkDocs s'utilitza principalment per:</p>
+<ul>
+<li>Crear documentació tècnica per a projectes de programari, manuals o tutorials,</li>
+<li>Generar llocs web estàtics que poden ser allotjats fàcilment en serveis com GitHub Pages.</li>
+<li>Facilitar la col·laboració en projectes mitjançant una estructura de documentació clara i ben organitzada.</li>
+</ul>
+<p>Al nostre cas, realitzarem un <em>blog</em> tècnic, on anirem documentant el que anem aprenent als mòduls d'Entorns de Desevolupament i Llenguatges de Marques, i que pot acabar convertint-se en els nostres propis apunts del mòdul.</p>
+<h2 id="al-lio">Al lio!</h2>
+<h3 id="installacio">Instal·lació</h3>
+<p>En primer lloc, hem de realitzar la instal·lació d'MkDocs.</p>
+<p>Els passos per realitzar la instal·lació s'han de realitzar des de la terminal (<em>Menu &gt; Sistema &gt; Konsole</em>).</p>
+<div class="admonition note">
+<p class="admonition-title">Usuaris de Windows</p>
+<p>Si fem ús de Windows, caldrà que instal·leu python prèviament. Això ho farem descarregant-lo des de <a href="https://www.python.org/">https://www.python.org/</a>, i assegurant-nos durant la instal·lació que marquem l'opció <em>Add Python to PATH.</em>.</p>
+</div>
+<ol>
+<li>
+<p><strong>Creació d'un entorn virtual de python</strong>: El primer que hem de fer és crear un entorn virtual de Python. Això ens servirà per disposar d'un entorn propi per instal·lar components en python sense interferir en els components del sistema. Per a això llançarem la següent ordre (l'escriurem a la terminal i posarem <em>Intro</em>):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-venv
+</span></code></pre></div>
+<div class="admonition note">
+<p>No es preocupeu si no enteneu massa el que estem fent ara. Amb <code>sudo</code> el que fem és llançar l'ordre com a administradors, i amb <code>apt install</code>, el que fem és utilitzar el gestor de paquets <code>apt</code> per instal·lar programari.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Accés com a sudo</p>
+<p>En els ordinadors de l'aula, no podreu fer aquest pas com a alumnes. Aviseu el professor perquè realitze la instal·lació.</p>
+</div>
+<p>Una vegada instal·lat el paquet <code>python3-venv</code>, que és el qui ens proporciona la capacitat de crear aquests entorns virtuals, anem a crear un entorn virtual per treballar amb <em>MkDocs</em>. </p>
+<p>Per a això, ens situem primer a la carpeta on instal·larem l'entorn. Per exemple en <code>~/.local</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>.local
+</span></code></pre></div>
+<p>I llancem l'ordre:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python3 -m venv mkdocsenv
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Usuaris de Windows</p>
+<p>Amb windows llançarem:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python -m venv mkdocsenv
+</span></code></pre></div>
+</div>
+</li>
+<li>
+<p><strong>Instal·lació dels paquets d'MkDocs amb <code>pip</code>.</strong> Una vegada tenim creat l'entorn, l'hem d'activar, fent un <code>source</code> del fitxer d'activació:</p>
+</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">source</span><span class="w"> </span>mkdocsenv/bin/activate
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Usuaris de Windows</p>
+<p>En Windows, haureu d'activar-lo llançant directament l'script:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mkdocsenv\Scripts\activate
+</span></code></pre></div>
+</div>
+<p>Veurem com el <em>prompt</em> ara canvia indicant que estem dins l'entorn.</p>
+<div class="admonition note">
+<p class="admonition-title">Important!</p>
+<p>Recordeu que cada vegada que aneu a utilitzar mkdocs haureu d'activar aquest entorn!</p>
+</div>
+<p>Una vegada dins l'entorn, ja podem instal·lar mkdocs, com a llibreria de python, amb l'ordre:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Què és pip?</p>
+<p><em>Pip</em> (Package Installer for Pyton) és un sistema de gestió de programari propi de Python. Així com <code>apt</code> ens serveix per descarregar programari dels repositoris del sistema operatiu, <code>pip</code> ho fa des del repositori de programari Python.</p>
+</div>
+<p>Amb aquesta base, ja podrem fer ús d'mkdocs, i anar instal·lant altres components a mesura que els anem necessitant.</p>
+<h3 id="creacio-dun-projecte">Creació d'un Projecte</h3>
+<p>Per començar a treballar amb mkdocs, necessitarem abans que res un projecte. Per a això, farem ús de l'ordre <code>mkdocs new</code>, de la següent manera.</p>
+<p>Ens situem en la carpeta on desitgem crear el projecte, i llancem, per exemple:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mkdocs<span class="w"> </span>new<span class="w"> </span>tasques_LMI_EDD
+</span></code></pre></div>
+<p>Això ens crearà una carpeta <code>tasques_LMI_EDD</code> o amb el nom que hem indicat. Per accedir a ella, fem:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>cd tasques_LMI_EDD
+</span></code></pre></div>
+<h3 id="estructura-del-contingut">Estructura del contingut</h3>
+<p>L'ordre anterior ens haurà generat la següent estructura de carpetes:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>tasques_LMI_EDD/
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>├── docs
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>│   └── index.md
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>└── mkdocs.yml
+</span></code></pre></div>
+<p>Com veieu, tenim una carpeta <code>docs</code>, que conté un document en Markdown anomenat <code>index.md</code>, que serà la pàgina principal dels continguts. Tenim també un document <code>mkdocs.yml</code>, que serà on afegirem les propietats del projecte i definirem la seua estructura. Si accedim al contingut d'aquest, veurem que de moment, només té la línia:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My Docs</span>
+</span></code></pre></div>
+<p>Que defineix amb l'etiqueta <code>site_name</code> el nom del lloc, i que podem canviar per posar el nom que desitgem.</p>
+<h3 id="visualitzacio-del-lloc">Visualització del lloc</h3>
+<p>Per tal de veure la documentació que estem generant, farem ús de l'ordre:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mkdocs serve
+</span></code></pre></div>
+<p>Que ens crearà un servidor web local on allotjarà la documentació que estem generant. Si tot va bé, ens traurà un resultat semblant a aquest:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>INFO    -  Building documentation...
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>INFO    -  Cleaning site directory
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>INFO    -  Documentation built in 0.23 seconds
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>INFO    -  [06:27:36] Watching paths for changes: &#39;docs&#39;, &#39;mkdocs.yml&#39;
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>INFO    -  [06:27:36] Serving on http://127.0.0.1:8000/
+</span></code></pre></div>
+<p>On ens diu que està servint la documentació en l'adreça http://127.0.0.1:8000/. Per accedir-hi, podem copiar i apegar l'adreça a la barra d'adreces del navegador o bé fer Ctrl+Clic amb el ratolí sobre l'adreça.</p>
+<p>De moment, la única cosa que veurem és la pàgina d'índex que s'ha generat automàticament:</p>
+<p><a class="glightbox" href="img/inici.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/inici.png" /></a></p>
+<h3 id="ara-si-mans-a-lobra">Ara sí... mans a l'obra</h3>
+<p>Per tal d'anar generant continguts en aquest lloc, anirem creant diferents documents Markdown dins la carpeta <code>docs</code>. També és una bona idea organitzar aquests en subcarpetes, de manera que sapiguem on trobar els documents quan el lloc comence a créixer.</p>
+<h4 id="configuracio-del-lloc-web">Configuració del lloc web</h4>
+<p>Anem a configurar el lloc web a través del fitxer <code>mkdocs.yml</code>.</p>
+<p>Obrirem amb VSCode la carpeta on tenim el projecte, i seleccionarem aquest fitxer.</p>
+<p>Una primera configuració molt bàsica serà:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Documentació</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">les</span><span class="nv"> </span><span class="s">tasques&#39;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;mkdocs&#39;</span>
+</span></code></pre></div>
+<p>A més del <code>site_name</code> que ja coneixem, hem definit les propietats del tema d'aquest (<code>theme</code>). Entre d'altres coses, definirem el nom del tema, en aquest cas <code>mkdocs</code>, que és el tema per defecte (si no haverem posat res, utilitzaria aquest). Podem provar a canviar-lo per l'altre tema que ve preinstal·lat <code>readthedocs</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Compte amb les tabulacions!</p>
+<p>Tingueu en compte que YAML no utilitza marques anidades per definir les diferents seccions i continguts del document, sinò que fa ús de tabulacions. En aquest cas, com que <code>name</code> està tabulat dins de <code>theme</code> significa que és una propieta d'aquest. Si volguérem afefir més propietats al tema, caldria que estigueren tabulats de la mateixa manera que <code>name</code>.</p>
+</div>
+<h4 id="afegint-documents-i-navegacio">Afegint documents i navegació</h4>
+<p>A mesura que anem afegint documents al lloc, ho farem, com hem comentat dins la carpeta <code>docs</code>, i en l'organització de carpetes que desitgem.</p>
+<p>Per exemple, imagineu que tenim la següent organització de carpetes:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docs/
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>├── edd
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>│   ├── document_1.md
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>│   ├── document_2.md
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>│   └── document_3.md
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>├── index.md
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>└── lmi
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    ├── document_1.md
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    └── document_2.md
+</span></code></pre></div>
+<p>Com veieu, hem cret dos carpetes, una per als articles d'EDD i altra per als articles d'LMI. La primera conté tres documents, i la segona dos.</p>
+<p>Per tal de plasmar això en la navegació del nostre lloc, caldria afegit una categoria <code>nav</code> a dins la configuració, de la següent manera:</p>
+<p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Documentació</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">les</span><span class="nv"> </span><span class="s">tasques&#39;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;mkdocs&#39;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="nt">nav</span><span class="p">:</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Inici</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Articles EDD</span><span class="p">:</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Article 1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">edd/document_1.md</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Article 2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">edd/document_2.md</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Article 3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">edd/document_3.md</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Articles LMI</span><span class="p">:</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Article 1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lmi/document_1.md</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Article 2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lmi/document_2.md</span>
+</span></code></pre></div>
+Com veieu, dins de <code>nav</code>, afegim una <em>llista</em> de categories (Inici, Articles EDD i Articles LMI), i dins de cada categoria, els diferents articles. </p>
+<p>Això ens mostrarà el següent a la pàgina:</p>
+<p><a class="glightbox" href="img/nav.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/nav.png" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Important!</p>
+<p>Encara que en aquest cas l'estructura de navegació que hem creat coincideix amb l'organització de carpetes, no té per què ser així, i poden tindre organitzacions diferents.</p>
+</div>
+<p>Fixeu-vos també que per especificar una <em>llista</em> d'elements iguals dins d'una categoria fem d'utilitzar els guions <code>-</code>. En cas contrari, mkdocs ho interpretarà com etiquetes, i ens donarà error.</p>
+<h2 id="tasca-a-realitzar">Tasca a realitzar</h2>
+<p>Crea un lloc de documentació amb els diferents articles i exercicis que hem anat realitzant durant aquestes primeres unitats, tant en LMI com en EDD. En les següents unitats seguirem incorporant nous articles i treballant sobre aquest lloc.</p>
+<p>Recorda que alguns dels exercici que hem fet han estat:</p>
+<ul>
+<li>
+<p>En llenguatges de marques:</p>
+<ul>
+<li>Identificar característiques (elements, etiquetes, propietats) dels llenguatges de marques en diferents documents (svg, html, xml...)</li>
+<li>Identificació dels espais de noms en documents (AndroidManifest.xml). Aquest article es podria combinar amb l'anterior.</li>
+</ul>
+</li>
+<li>
+<p>En Entorns:</p>
+<ul>
+<li>Buscar els llenguatges més utilitzats i indicar les seues característiques (a mode de ressum d'aquest article podríes incloure alguna taula amb Markdown)</li>
+<li>Article sobre com plantejarieu el desenvolupament d'una app (llenguatges, tecnologies, etc.)</li>
+<li>Exemples de traducció. Les ordres python3, cc, java i javac.</li>
+<li>L'efecte Bola de neu</li>
+<li>La web d'una empresa</li>
+<li>Scrum: Comflicte d'interessos</li>
+</ul>
+</li>
+</ul>
+<p>Recordeu incorporar al codi Markdown:</p>
+<ul>
+<li>Capçaleres,</li>
+<li>Formats (negretes, subratllat),</li>
+<li>Enllaços,</li>
+<li>Imatges/captures de pantalla,</li>
+<li>Fragments de codi font</li>
+<li>Taules</li>
+</ul>
+      
+    
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "header.autohide"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

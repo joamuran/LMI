@@ -1,0 +1,703 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../6.POO/">
+      
+      
+      
+      <link rel="icon" href="../img/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Exercicis - Manipulació de documents web: Javascript</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://joamuran.net/curs24_25/css/material-just.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#elements-del-llenguatge" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Manipulació de documents web: Javascript" class="md-header__button md-logo" aria-label="Manipulació de documents web: Javascript" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Manipulació de documents web: Javascript
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exercicis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Manipulació de documents web: Javascript" class="md-nav__button md-logo" aria-label="Manipulació de documents web: Javascript" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    Manipulació de documents web: Javascript
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.generalitats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Generalitats de Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.Elements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Elements de llenguatge
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.Funcions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Funcions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.PrgEstructurada/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Programació Estructurada
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.POO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Programació Orientada a Objectes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Exercicis
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Exercicis
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#elements-del-llenguatge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elements del llenguatge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programacio-estructurada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programació estructurada
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#elements-del-llenguatge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elements del llenguatge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programacio-estructurada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programació estructurada
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  
+    <!-- Contingut per a altres pàgines -->
+    
+                  
+
+
+  <h1>Exercicis</h1>
+
+<h3 id="elements-del-llenguatge">Elements del llenguatge</h3>
+<ol>
+<li>
+<p><strong>Declaració de variables i operadors</strong><br />
+   Declara tres variables amb els teus colors preferits i mostra-les per consola. A continuació, utilitza operadors per a combinar-les en una nova variable i mostra’n el resultat.</p>
+</li>
+<li>
+<p><strong>Ús de <code>typeof</code></strong><br />
+   Crea variables de diferents tipus: un número, una cadena de text i un valor lògic. Utilitza <code>typeof</code> per mostrar el tipus de cada variable en consola.</p>
+</li>
+<li>
+<p><strong>Conversió de tipus automàtica</strong><br />
+   Declara dues variables, una com a número i una altra com a cadena de text. Assigna una expressió que involucre les dues variables a una tercera variable i comprova el resultat i el tipus. Explica per què s’obté aquest resultat.</p>
+</li>
+<li>
+<p><strong>Vectores i accés a elements</strong><br />
+   Declara un vector amb els dies de la setmana i mostra en consola el segon i el cinquè element. Modifica l'últim element del vector per indicar “Dia desconegut”.</p>
+</li>
+<li>
+<p><strong>JSON bàsic</strong><br />
+   Defineix un objecte JSON amb informació bàsica sobre un llibre (títol, autor i any). Mostra el títol del llibre utilitzant l'objecte JSON i després afegeix una nova propietat <code>editorial</code>.</p>
+</li>
+</ol>
+<h3 id="programacio-estructurada">Programació estructurada</h3>
+<ol>
+<li>
+<p><strong>Condicionals simples amb <code>if/else</code></strong><br />
+   Escriu una funció <code>verificaHora(hora)</code> que prenga com a paràmetre un número entre 0 i 23. Si la <code>hora</code> està entre 6 i 12, mostra "Bon dia"; si és entre 13 i 20, "Bona vesprada"; i en qualsevol altre cas, "Bona nit".</p>
+</li>
+<li>
+<p><strong>Condicional <code>switch</code></strong><br />
+   Crea una funció <code>determinaDia(numDia)</code> que mostre el nom del dia en valencià (de “Dilluns” a “Diumenge”) a partir d'un número de 1 a 7 utilitzant un <code>switch</code>.</p>
+</li>
+<li>
+<p><strong>Bucle <code>for</code></strong><br />
+   Escriu un bucle <code>for</code> que mostre els números de l'1 al 10. Després, escriu un altre <code>for</code> que mostre només els nombres parells fins al 20.</p>
+</li>
+<li>
+<p><strong>Bucle <code>for...of</code> i vectors</strong><br />
+   Declara un vector de tres ciutats valencianes i recorre’l amb un <code>for...of</code> per a mostrar cada ciutat en consola.</p>
+</li>
+<li>
+<p><strong><code>while</code> i <code>do...while</code></strong><br />
+    Escriu un bucle <code>while</code> que comence en 10 i vaja restant 1 fins a arribar a 0, mostrant cada valor en consola. A continuació, fes el mateix amb un <code>do...while</code>.</p>
+</li>
+</ol>
+<h3 id="funcions">Funcions</h3>
+<ol>
+<li>
+<p><strong>Funció que retorna un valor</strong><br />
+    Crea una funció <code>doble(num)</code> que retorne el doble del número proporcionat. Crida-la amb diferents valors i mostra els resultats en consola.</p>
+</li>
+<li>
+<p><strong>Funció amb paràmetres per defecte</strong><br />
+    Escriu una funció <code>salutació(nom = "amic")</code> que mostre "Hola, [nom]!". Si no es passa cap nom, ha de mostrar "Hola, amic!".</p>
+</li>
+</ol>
+<!--
+## **5. Programació Orientada a Objectes amb prototips**
+
+13. **Creació de prototips i instanciació**  
+    Crea un prototip `Persona` amb les propietats `nom` i `edat`. Afegeix un mètode `presentació` que mostre un missatge amb el nom i l’edat de la persona. Instancia dues persones i crida al mètode `presentació` per a cada una.
+
+14. **Ús de `this` i `prototype`**  
+    Escriu una funció constructora `Cotxe` amb les propietats `marca` i `model`. Afegeix un mètode `mostrarCotxe` al prototip de `Cotxe` que mostre un missatge amb la marca i el model del cotxe. Crea dos cotxes i comprova el mètode.
+
+#### **6. Programació Orientada a Objectes amb classes (ES6)**
+
+15. **Definició de classes i constructors**  
+    Crea una classe `Empleat` amb les propietats `nom` i `sou`. Afegeix un constructor que inicialitze aquests valors i un mètode `mostrarInfo` que mostre el nom i el sou. Instancia dos empleats i comprova el mètode `mostrarInfo`.
+
+16. **Ús de `getters` i `setters`**  
+    Defineix una classe `Producte` amb una propietat `_preu` i afegeix un getter i un setter per a `preu`, assegurant que no siga menor que zero. Crea un `Producte`, assigna-li un valor negatiu i comprova que el preu no canvia.
+
+#### **7. Herència i polimorfisme**
+
+17. **Herència simple**  
+    Defineix una classe `Animal` amb una propietat `nom` i un mètode `ferSoroll`. Crea una subclasse `Gos` que redefinisca `ferSoroll` per a mostrar “bup”. Instancia un gos i crida al seu mètode `ferSoroll`.
+
+18. **Herència amb `super`**  
+    Crea una classe `Dispositiu` amb una propietat `marca` i un mètode `encendre`. A continuació, crea una subclasse `Ordinador` que afegisca una propietat `model` i redefineix el mètode `encendre` utilitzant `super`.
+
+19. **Polimorfisme amb funcions de prototip**  
+    Defineix un prototip `Figura` amb un mètode `area` que retorne 0. Crea dos funcions constructores `Rectangle` i `Cercle` que hereten de `Figura` i redefineixen `area` per a calcular l'àrea específica de cada forma. 
+
+
+
+
+
+### **Bateria d’exercicis sobre Programació Orientada a Objectes en JavaScript**
+
+#### **1. Conceptes bàsics**
+
+1. **Definició d’una classe bàsica**  
+   Crea una classe `Cotxe` amb les propietats `marca`, `model` i `any`. Afegeix un mètode `descripció` que retorne una cadena amb tots els detalls del cotxe. Instancia dos objectes de `Cotxe` amb diferents valors i crida el mètode `descripció` per a cada un.
+
+2. **Instanciació d’objectes**  
+   Utilitza la classe `Persona` dels exemples. Crea una nova propietat `edat` i afegeix un mètode `presentació` que mostre el nom i l’edat de la persona. Instancia dos persones amb noms i edats diferents i comprova que el mètode `presentació` funciona correctament.
+
+#### **2. Orientació a Objectes basada en prototips**
+
+3. **Ús del prototip `prototype`**  
+   Crea un constructor `Llibre` amb propietats `títol`, `autor` i `anyPublicació`. Afegeix un mètode `resum` al prototip `Llibre.prototype` que mostre una cadena amb el títol i l’autor del llibre. Crea tres llibres i comprova que el mètode `resum` funcione correctament en cada instància.
+
+4. **Espais de noms**  
+   Defineix un espai de noms `aplicació` i afegeix dues propietats `nomApp` i `versió`, juntament amb un mètode `info` que mostre el nom de l’aplicació i la versió. Crida al mètode `info` per a mostrar la informació de l’aplicació.
+
+5. **Objectes prototip per a crear instàncies**  
+   Crea una funció constructora `Producte` amb les propietats `nom` i `preu`. Afegeix un mètode `preuAmbIVA` al prototip, que calcule el preu del producte amb un IVA del 21%. Crea diferents instàncies de `Producte` i comprova el mètode `preuAmbIVA`.
+
+#### **3. Espais de Noms i Encapsulament**
+
+6. **Encapsulament de dades amb clousure**  
+   Defineix una funció constructora `CompteBancari` amb una propietat `saldo`. Afegeix mètodes per a ingressar diners i per a retirar-ne, assegurant que el saldo mai pot ser menor que zero. Utilitza una variable interna per a guardar el saldo, de manera que aquest no siga accessible des de fora dels mètodes de la classe.
+
+7. **Espais de noms en aplicacions grans**  
+   Simula una aplicació amb tres espais de noms: `calculadora`, `gestióUsuaris` i `producte`. Cada espai de noms ha de tenir almenys una propietat i un mètode (com per exemple, un càlcul simple per a `calculadora` o una funció per afegir un usuari en `gestióUsuaris`).
+
+#### **4. Creació de Classes i Ús d’Herència amb la sintaxi ES6**
+
+8. **Classes i constructor amb paràmetres per defecte**  
+   Defineix una classe `Empleat` amb propietats `nom`, `càrrec` i `sou`. Assegura que el `càrrec` per defecte siga "Operari". Crea instàncies amb diferents valors per a comprovar el funcionament del constructor i els valors per defecte.
+
+9. **Herència i ús de `super`**  
+   Crea una classe `Vehicle` amb una propietat `velocitat`. Defineix un mètode `accelerar` que augmente la velocitat. A continuació, crea una subclasse `Moto` que herete de `Vehicle` i afegeix una propietat `marca`. Comprova que la subclasse hereta correctament la funcionalitat del mètode `accelerar`.
+
+10. **Redefinició de mètodes a subclasses**  
+    Crea una classe `Animal` amb un mètode `ferSoroll` que mostre "L'animal fa soroll". Crea dues subclasses, `Gat` i `Gos`, que redefinisquen el mètode per a mostrar sons específics (per exemple, "miau" i "bup").
+
+11. **Ús de mètodes estàtics**  
+    Defineix una classe `Matemàtiques` amb un mètode estàtic `sumar` que accepte dos números i retorne el resultat. Comprova que pots cridar a `Matemàtiques.sumar` sense haver de crear una instància de la classe.
+
+12. **Encapsulament amb getters i setters**  
+    Crea una classe `Producte` amb una propietat `_preu`. Afegeix un getter i un setter per a `preu`, assegurant que el preu mai puga ser negatiu. Crea una instància de `Producte`, intenta assignar-li un valor negatiu i comprova que el preu no es modifica.
+
+#### **5. Exercicis avançats de Polimorfisme i Prototipus**
+
+13. **Polimorfisme amb prototips**  
+    Crea una funció constructora `Forma` amb un mètode `area` que retorne 0. Defineix altres funcions constructores `Rectangle` i `Cercle` que hereten de `Forma`. Redefineix el mètode `area` per a calcular l’àrea específica segons la forma.
+
+14. **Ús de `instanceof` per comprovar tipus d’instàncies**  
+    Crea les classes `Persona` i `Estudiant`, on `Estudiant` hereta de `Persona`. Defineix un mètode en `Estudiant` que verifique si una instància és de la classe `Estudiant` o `Persona` mitjançant `instanceof`.
+
+15. **Creació de classes amb atributs privats (solució alternativa)**  
+    Utilitza una funció de tancament (`closure`) per crear una classe `Client` que tinga una propietat `saldo` a la qual només es puga accedir a través de mètodes públics. Inclou mètodes per a ingressar diners i consultar el saldo, però assegura que el saldo no siga directament modificable des de fora.
+
+-->
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
