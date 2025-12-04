@@ -1,0 +1,50 @@
+site_name: "Utilització de llenguatges de marques en entorns web: HTML i CSS"
+
+nav:
+  - "Inici": 'index.md'
+  - "1. Introducció a CSS": '1.IntroduccioCSS.md'
+  - "2.Aplicació de CSS": '2.aplicacio.md'
+  - "3. Regles CSS": '3.regles.md'
+  - "4. Propietats bàsiques": '4.propietats_basiques.md'
+  - "5. Selectors": '5.selectors.md'
+  - "6. Enllaços, llistes i imatges": '6.links_llistes_imatges.md'
+  - "7. Model de caixa": '7.box_model.md'
+  - "8. Elements de bloc i línia": '8.elements_bloc_i_linia.md'
+  - "9. Taules": '9.Taules.md'
+  - "10. Posicionament": '10.posicionament.md'
+
+theme:
+  name: 'material'
+  custom_dir: 'overrides'
+  logo: 'img/logo.svg'
+  favicon: 'img/logo.svg'
+  features:
+    - content.code.copy # PEr copiar codi
+  palette:
+    primary: white
+
+extra_css:
+  - extra.css
+
+plugins:
+  - search
+  - glightbox   # Per vore les imatges en gran quan fas clic en elles.
+  # - pandoc
+
+markdown_extensions:
+  - attr_list           # Permet incorporar atributs a les imatges { width=100px }
+  - md_in_html # Junt a attr_list per afegir peus a les imatges
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      baselevel: 2
+      toc_depth: 3

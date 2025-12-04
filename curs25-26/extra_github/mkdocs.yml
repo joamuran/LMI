@@ -1,0 +1,56 @@
+site_name: Github bàsic
+
+nav:
+  - "Github bàsic": index.md
+
+theme:
+  name: 'material'
+  logo: 'img/logo.svg' 
+  favicon: 'img/logo.svg'
+  palette:
+    primary: 'white'
+
+  features:
+    - content.code.copy # PEr copiar codi
+    - content.code.annotate
+    - search.suggest
+
+    
+    # -  navigation.tabs
+    
+#  custom_dir: 'custom' # Per afegir html extra
+
+extra_css:
+  - extra.css
+
+plugins:
+  - search
+  - glightbox   # Per vore les imatges en gran quan fas clic en elles.
+  # - pandoc
+  - exclude-unused-files:
+      file_types_to_check: ["png", "jpg", "jpeg", "gif"]
+      enabled: true
+
+markdown_extensions:
+  - attr_list           # Permet incorporar atributs a les imatges { width=100px }
+  - md_in_html # Junt a attr_list per afegir peus a les imatges
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      linenums: true
+      auto_title: true
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      baselevel: 2
+      toc_depth: 3
+  - pymdownx.tasklist:
+      custom_checkbox: true

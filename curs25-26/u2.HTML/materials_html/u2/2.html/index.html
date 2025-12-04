@@ -1,0 +1,2086 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../1.intro_html/">
+      
+      
+        <link rel="next" href="../3.formularis/">
+      
+      
+      <link rel="icon" href="../img/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
+    
+    
+      
+        <title>2. HTML. Característiques bàsiques. - Utilització de llenguatges de marques en entorns web: HTML i CSS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#etiquetes-i-atributs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Utilització de llenguatges de marques en entorns web: HTML i CSS" class="md-header__button md-logo" aria-label="Utilització de llenguatges de marques en entorns web: HTML i CSS" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Utilització de llenguatges de marques en entorns web: HTML i CSS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. HTML. Característiques bàsiques.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Utilització de llenguatges de marques en entorns web: HTML i CSS" class="md-nav__button md-logo" aria-label="Utilització de llenguatges de marques en entorns web: HTML i CSS" data-md-component="logo">
+      
+  <img src="../img/logo.svg" alt="logo">
+
+    </a>
+    Utilització de llenguatges de marques en entorns web: HTML i CSS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.intro_html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introducció a HTML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2. Característiques bàsiques d'HTML
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2. Característiques bàsiques d'HTML
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetes-i-atributs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etiquetes i atributs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-dun-document-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura d’un document HTML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura d’un document HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elements-semantics-dhtml5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elements Semàntics d'HTML5
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contenidors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contenidors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetes-basiques-de-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etiquetes bàsiques de text
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetes bàsiques de text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capcaleres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capçaleres
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#titol-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Títol 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Títol 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seccio-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secció 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seccio-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secció 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paragrafs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paràgrafs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etiqueta-de-salt-de-linia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etiqueta de salt de línia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etiquetes-de-format-al-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etiquetes de format al text
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referencies-a-entitats-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referències a entitats HTML
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enllacos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enllaços
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llistes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Llistes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llistes-de-definicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Llistes de definició
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combinacions-de-llistes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combinacions de llistes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imatges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imatges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marcs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.formularis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Formularis HTML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetes-i-atributs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etiquetes i atributs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-dun-document-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura d’un document HTML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura d’un document HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elements-semantics-dhtml5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elements Semàntics d'HTML5
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contenidors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contenidors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetes-basiques-de-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etiquetes bàsiques de text
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Etiquetes bàsiques de text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capcaleres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capçaleres
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#titol-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Títol 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Títol 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seccio-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secció 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seccio-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secció 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paragrafs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paràgrafs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etiqueta-de-salt-de-linia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etiqueta de salt de línia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etiquetes-de-format-al-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etiquetes de format al text
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referencies-a-entitats-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referències a entitats HTML
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enllacos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enllaços
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llistes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Llistes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llistes-de-definicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Llistes de definició
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combinacions-de-llistes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combinacions de llistes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imatges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imatges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marcs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  
+    <!-- Contingut per a altres pàgines -->
+    
+                  
+
+
+<h2 id="etiquetes-i-atributs">Etiquetes i atributs</h2>
+<p>Les etiquetes en HTML són els elements que s’utilitzen per <strong>a estructurar i marcar</strong> el contingut d’una document i són fonamentals per a la construcció de pàgines web i la definició de la seua estructura.</p>
+<p>Per altra banda, <strong>cada etiqueta compta amb atributs</strong> que s’inclouen en la definició d’aquesta i <strong>proporcionen informació addicional</strong> sobre com s’ha de processar i mostrar l’element.</p>
+<p>A continuació s’especifiquen les característiques bàsiques d’una etiqueta HTML:</p>
+<ol>
+<li>
+<p><strong>Nom de l’etiqueta</strong>: Les etiquetes tenen un nom que defineixen l’element al que representen. El nom de l’etiqueta es posa, entre els caràcters <code>&lt;</code> i <code>&gt;</code>:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">nom_etiqueta</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>Obertura i tancament</strong>: La majoria de les etiquetes d’HTML consten de dues parts, la d’obertura i la de tancament. La diferència entre les dos parts és que l’inici de la tancada comença per <code>&lt;/</code>, seguit del nom de l’etiqueta i després pel signe <code>&gt;</code>.</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">etiqueta</span><span class="p">&gt;</span>Contingut<span class="p">&lt;/</span><span class="nt">etiqueta</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>Etiquetes auto-tancades</strong>: Algunes etiquetes poden ser auto-tancades. Això significa que no tenen una etiqueta de tancament separada. Poden acabar amb un  <code>/</code> dins de l’etiqueta d’obertura. Indistintament es considera una etiqueta de tancament vàlida, tant si incloem el caràcter <code>/</code>  , com si no.</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>Atributs</strong>: Moltes etiquetes consten d’atributs que proporcionen informació addicional sobre l’element. Els atributs es col·loquen a l’etiqueta d’obertura i estan formats per un nom i un valor separats per un signe d’igual <code>=</code>. El valor ha d’anar entre cometes simples (<code>'</code>) o cometes dobles (<code>"</code>). Els atributs serveixen per controlar aspectes com l’aparença, el comportament i altres  característiques. En el següent exemple trobem el cas de l’etiqueta <code>img</code>, que com es pot veure consta de dos atributs: <code>src</code> i <code>alt</code>.</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;imatge.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Descripció de la imatge&quot;</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>Contingut</strong>: La majoria d’etiquetes contenen text o altres elements HTML com a contingut.</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquesta és una etiqueta de  paràgraf.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>Comentaris</strong>: El comentari és una manera de proporcionar anotacions o explicacions que <strong>no es mostren als visitants de la pàgina</strong>. Es tracta d’una manera de documentar el codi HTML per a què els desenvolupadors puguen comprendre millor l’estructura o per deixar notes internes. Els comentaris no són interpretats pel navegador i són ignorats a l’hora de mostrar la pàgina final. A l’hora de posar comentaris has de tindre en compte que:</p>
+<ul>
+<li>Comencen amb <code>&lt;!--</code> i acaben amb <code>--&gt;</code>.</li>
+<li>Poden ocupar una o varies línies de text.</li>
+<li>No tenen cap efecte sobre la representació de la pàgina web, i per tant, no són visibles als usuaris.</li>
+</ul>
+</li>
+</ol>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a> `<span class="cm">&lt;!--Aquest és un comentari d’una línia HTML --&gt;</span> 
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a> <span class="cm">&lt;!-- Aquest és un comentari que ocupa </span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="cm">      diverses línies.  </span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="cm">      Pots afegir tanta informació com </span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="cm">      necessites --&gt;</span>` 
+</span></code></pre></div>
+<p>En definitiva, són d’utilitat per a aclarir el codi, indicar autors, deixar notes de desenvolupament o eliminar temporalment parts del codi sense necessitat de suprimir-les.</p>
+<div class="admonition note">
+<p>Si s'adoneu, no hem vist pràcticament res de nou, ja que quasi tots aquests conceptes són comuns als llenguatge de marques basats en SGML, com és XML, que ja hem vist a la unitat introductòria.</p>
+</div>
+<h2 id="estructura-dun-document-html">Estructura d’un document HTML</h2>
+<p>Un document HTML té una <strong>estructura jeràrquica</strong> que està composada per diferents elements:</p>
+<p><a class="glightbox" href="../img/2/estrucuta_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/2/estrucuta_1.png" width="400px" /></a></p>
+<ol>
+<li>
+<p><strong>L’element Doctype</strong>: Representat per l’etiqueta <code>&lt;!DOCTYPE&gt;</code> en la primera línia d’un document HTML conté la declaració en la que s’especifica la versió d’HTML que s’està utilitzant. Aquesta etiqueta ajuda al navegador a interpretar correctament el document. En HTML5, a diferència d’anteriors versions només cal especificar que el tipus de document és HTML, sense fer referència a la versió.</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>Element <code>&lt;html&gt;</code></strong>: és l’<strong>element arrel</strong> i engloba a tot el contingut de la pàgina. Conté dos subelements, el <code>&lt;head&gt;</code> i el <code>&lt;body&gt;</code>. Opcionalment podem establir l’atribut <code>lang</code> per especificar l’idioma del document.</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span> 
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>   
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span> 
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>         
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>Secció <code>&lt;head&gt;</code></strong>: Dins d’aquesta secció es poden incloure <strong>metadades</strong> com ara el títol de la pàgina, la <strong>codificació de caràcters</strong>, les <strong>descripcions de pàgina</strong> (metaetiquetes), <strong>enllaços a fulls d’estil, scripts i altres elements</strong> relacionats amb la configuració i el comportament de la pàgina.</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span> Títol de la pàgina <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>   <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;estils.css&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>Secció <code>&lt;body&gt;</code></strong>: Contingut de la pàgina: S’inclou dins de la secció <code>&lt;body&gt;</code>, es posa tot el contingut que es vol mostrar als visitants com ara, text, imatges, enllaços, taules i altres elements HTML.</p>
+</li>
+</ol>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a> <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Títol principal<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un paràgraf de text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;imatge.jpg&quot;</span>  <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Descripció imatge&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.exemple.com&quot;</span><span class="p">&gt;</span>Enllaç a l’exemple<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a> <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span> 
+</span></code></pre></div>
+<p><a class="glightbox" href="../img/2/estructura_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/2/estructura_2.png" width="400px" /></a></p>
+<p>Una vegada introduïda l’estructura bàsica d’un document HTML, és el moment de començar a introduir la resta d’etiquetes bàsiques t’HTML que donen contingut i sentit al document.</p>
+<h3 id="elements-semantics-dhtml5">Elements Semàntics d'HTML5</h3>
+<p>L'estàndard HTML5 incorpora elements semàntics, que milloren l'accessibilitat i el SEO (<em>Search Engine Optimization</em> o optimització per a motors de cerca) del document HTML. Aquests elements proporcionen un significat clar sobre el contingut que encapsulen.</p>
+<p>Veiem de quins elements es tracta:</p>
+<h4 id="header"><code>header</code></h4>
+<p>L'element <code>&lt;header&gt;</code> defineix la capçalera d'un document o secció. Pot contenir títols, subtítols i elements de navegació.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">HTML</label><label for="__tabbed_1_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Títol del Lloc<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>     <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>          <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#home&quot;</span><span class="p">&gt;</span>Inici<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>          <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#about&quot;</span><span class="p">&gt;</span>Sobre Nosaltres<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>     <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="all: initial;">
+   <header>
+       <h1>Títol del Lloc</h1>
+       <nav>
+           <ul>
+               <li><a href="#home">Inici</a></li>
+               <li><a href="#about">Sobre Nosaltres</a></li>
+           </ul>
+       </nav>
+   </header>
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">L'element nav</p>
+<p>Si es fixeu, hem introduit un nou element: <code>nav</code>. Aquest element conté enllaços de navegació importants. </p>
+<p>Tot i que pot ubicar-se en qualsevol lloc, sovint s'usa dins una capçalera, per afegir un menú de navegació comú a tot el lloc.</p>
+<p>El seu contingut, sol expressar-se en una llista, emb les etiquetes <code>ul</code>/<code>li</code>, que comentem més avant.</p>
+</div>
+<h4 id="footer"><code>footer</code></h4>
+<p>L'element <code>&lt;footer&gt;</code> defineix el peu de pàgina d'un document o secció. Normalment conté informació de copyright, enllaços a la política de privadesa, etc.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">HTML</label><label for="__tabbed_2_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="ni">&amp;copy;</span> 2024, Tots els drets reservats.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="all: initial;">
+   <footer>
+    <p>&copy; 2024, Tots els drets reservats.</p>
+   </footer>
+</div></p>
+</div>
+</div>
+</div>
+<h4 id="article"><code>article</code></h4>
+<p>L'element <code>&lt;article&gt;</code> s'utilitza per a contingut independent i autònom, com articles de blog o notícies.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">HTML</label><label for="__tabbed_3_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Títol de l&#39;Article<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Això és un article sobre HTML5.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="all: initial;">
+   <article>
+    <h2>Títol de l'Article</h2>
+    <p>Això és un article sobre HTML5.</p>
+</article>
+</div></p>
+</div>
+</div>
+</div>
+<h4 id="section"><code>section</code></h4>
+<p>L'element <code>&lt;section&gt;</code> s'utilitza per agrupar temes o seccions relacionades dins d'un document.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">HTML</label><label for="__tabbed_4_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Títol de la Secció<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és el contingut de la secció.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="all: initial;">
+<section>
+<h2>Títol de la Secció</h2>
+<p>Aquest és el contingut de la secció.</p>
+</section>
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Quan utilitzem article o section?</p>
+<p>Com hem dit, l'article té sentit per sí mateix, mentre que una secció conté temes relacionats dins un document.</p>
+<p>Així, un article podria estar compost per diverses seccions, però no podriem tindre una secció composta per articles.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Més informació sobre elements semàntics</p>
+<ul>
+<li><a href="https://www.eniun.com/html5-estructura-basica-elementos-semanticos/">Article <em>HTML5, estructura básica y elementos semánticos</em></a></li>
+</ul>
+</div>
+<h2 id="contenidors">Contenidors</h2>
+<p>HTML distingeix entre <strong>etiquetes de bloc</strong> i <strong>etiquetes en línia</strong>. Les etiquetes de bloc, com <code>&lt;div&gt;</code>, ocupen tota l'amplada disponible i comencen en una nova línia, mentre que les etiquetes en línia, com <code>&lt;span&gt;</code>, només ocupen l'espai necessari i es mostren al costat d'altres elements en la mateixa línia.</p>
+<p>Veiem aquests dos elements:</p>
+<ul>
+<li>
+<p><strong>L'lement <code>div</code></strong> L'element <code>&lt;div&gt;</code> és un contenidor genèric que no aporta significat semàntic, però és útil per agrupar altres elements HTML. S'usa sovint per aplicar estils amb CSS o per controlar el disseny amb JavaScript.</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Títol Principal<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Això és un paràgraf dins d&#39;un div.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>L'element <code>span</code></strong>: L'element <code>&lt;span&gt;</code> és similar al <code>&lt;div&gt;</code>, però es fa servir per agrupar contingut en línia. Sol utilitzar-se pe aplicar estils a parts del text dins d'altres elements.</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;important&quot;</span><span class="p">&gt;</span>text important<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> dins d&#39;un paràgraf.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Més informació sobre div i span</p>
+<ul>
+<li><a href="https://www.w3schools.com/tags/tag_div.asp">W3Schools: HTML <code>&lt;div&gt;</code> Element</a></li>
+<li><a href="https://www.w3schools.com/tags/tag_span.asp">W3Schools: HTML <code>&lt;span&gt;</code> Element</a></li>
+</ul>
+</div>
+<h2 id="etiquetes-basiques-de-text">Etiquetes bàsiques de text</h2>
+<h3 id="capcaleres">Capçaleres</h3>
+<p>Són etiquetes que s’utilitzen per a definir els <strong>diferents nivells</strong> d’una pàgina. Amb elles s’<strong>organitza el contingut textual</strong> d’una pàgina web, dotant-la d’una estructura jeràrquica i <strong>ajudant a l’accessibilitat</strong>.</p>
+<p>Les etiquetes van des de <code>&lt;h1&gt;</code> fins a <code>&lt;h6&gt;</code>, representant <code>‘&lt;h1&gt;</code> el nivell més alt i <code>&lt;h6&gt;</code> el més baix.</p>
+<p>És import utilitzar les etiquetes de capçalera per mantenir d’una manera correcta l’estructura jeràrquica i semàntica de la pàgina web. Per exemple la capçalera de primer nivell <code>&lt;h1&gt;</code> només deuria d’aparèixer una vegada en el document, mentre que la capçalera de nivell 2, <code>&lt;h2&gt;</code> deuria d’utilitzar-se només per a titular les seccions més importants.</p>
+<div class="admonition note">
+<p class="admonition-title">HTML i Markdown</p>
+<p>Si s'adoneu, en Markdown també tenim de sis nivells de capçaleres: <code>#</code>...<code>######</code>, que són equivalents a <code>&lt;h1&gt;</code> fins <code>&lt;h6&gt;</code>.</p>
+</div>
+<p>Exemple d’ús de les etiquetes de capçalera:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">HTML</label><label for="__tabbed_5_2">Markdown</label><label for="__tabbed_5_3">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Títol 1<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Secció 1.1<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Subsecció 1.1<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span> Secció 2<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Subsecció 2.1<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span> 
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="gh"># Títol 1</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="gu">## Secció 1</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="gu">### Subsecció 1.1</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="gu">## Secció 2</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="gu">### Subsecció 2.1</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div style="color:black; font-family:Serif">
+<h2 id="titol-1">Títol 1</h2>
+<h3 id="seccio-1">Secció 1</h3>
+<h4 id="subseccio-11">Subsecció 1.1</h4>
+<h3 id="seccio-2">Secció 2</h3>
+<h4 id="subseccio-21">Subsecció 2.1</h4>
+</div>
+</div>
+</div>
+</div>
+<h3 id="paragrafs">Paràgrafs</h3>
+<p>Una de les eines més bàsiques per a estructurar el contingut d’una pàgina web és l’etiqueta de paràgraf. Aquesta etiqueta és representada amb <code>&lt;p&gt;</code> i s’utilitza per a <strong>delimitar blocs de text</strong> que han de ser visualitzats com a paràgrafs separats de la resta.</p>
+<p>Un paràgraf és una <strong>etiqueta de bloc</strong>, que implica que quan la utilitzem crea un bloc de text i en acabar fa un salt de línia.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">HTML</label><label for="__tabbed_6_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és el primer paràgraf. És una manera
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>  senzilla d&#39;estructurar text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Ací hi ha un segon paràgraf.
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>   Cada paràgraf s&#39;ajusta automàticament a la mida
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>   de la finestra del navegador.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+Aquest és el primer paràgraf. És una manera senzilla d'estructurar text.</p>
+<p>Ací hi ha un segon paràgraf. Cada paràgraf s'ajusta automàticament a la mida de la finestra del navegador.
+</div></p>
+</div>
+</div>
+</div>
+<h3 id="etiqueta-de-salt-de-linia">Etiqueta de salt de línia</h3>
+<p>L'etiqueta <code>&lt;br&gt;</code> en HTML és una etiqueta buida que s'utilitza per <strong>crear un salt de línia</strong> o una nova línia de text dins d'un element de bloc, com ara, un paràgraf <code>&lt;p&gt;</code>. Aquesta etiqueta <strong>no té una part d'obertura i tancament</strong> com moltes altres etiquetes HTML, ja que no envolta cap contingut, simplement s'afegeix a l'HTML quan es vol indicar que es requereix un salt de línia.</p>
+<p>L'ús més comú de l'etiqueta <code>&lt;br&gt;</code> és per aconseguir un salt de línia manual quan es vol canviar de línia dins d'un paràgraf o un altre element en forma de bloc. Això pot ser útil per a situacions com canvis de línia en adreces o poemes, o quan es vol ajustar manualment el format del text.</p>
+<p>En el següent exemple, l'etiqueta <code>&lt;br&gt;</code> es fa servir per generar un salt de línia entre les dues frases, creant dues línies de text separades dins del mateix paràgraf</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">HTML</label><label for="__tabbed_7_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> Aquesta és una línia de text.<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> Aquesta és una nova línia de text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+Aquesta és una línia de text.    <br />
+Aquesta és una nova línia de text.
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Referència</p>
+<ul>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/br">Referència en la documentació de Mozilla</a></li>
+<li><a href="https://www.w3schools.com/tags/tag_br.asp">Referència en W3Schools</a></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Sobre Markdown, salts de línia i paràgrafs</p>
+<p>Recordeu que quan treballem amb Markdown, per tal de separar paràgrafs, necessitem afegir una línia en blanc.</p>
+<p>Quan es tracta d'un salt de línia, però no volem separar paràgrafs (és a dir, volem afegir un <code>&lt;br/&gt;</code>), el que fem és acabar la línia amb dos espais i un única salt de línia.</p>
+<p>Si afegim només un salt de línia, sense els espais, es considerarà tot el mateix paràgraf i no s'afegirà cap salt.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Compte amb els salts de línia</p>
+<p>Cal tenir en compte que <strong>l'ús excessiu</strong> d'aquesta etiqueta per afegir salts de línia <strong>pot no ser la millor pràctica</strong>, ja que pot dificultar la gestió de la presentació i l'estil del text. En molts casos, és millor utilitzar elements de bloc com paràgrafs <code>&lt;p&gt;</code> per organitzar i estructurar el contingut, i com veurem més endavant, utilitzar CSS per gestionar la presentació visual, com els marges i l'espai entre línies.</p>
+</div>
+<h3 id="etiquetes-de-format-al-text">Etiquetes de format al text</h3>
+<p>HTML consta d’un conjunt d’etiquetes que permeten estilitzar, destacar i organitzar el text d’una pàgina web. Aquestes etiquetes permeten als desenvolupadors web i dissenyadors controlar com es representa el text en una pàgina web.</p>
+<ul>
+<li><strong>L’etiqueta <code>&lt;b&gt;</code></strong>: s’utilitza per a aplicar el format de <strong>negreta</strong> a un fragment de text. Aquesta etiqueta no aporta cap <em>valor semàntic</em> sobre el text, només afecta a l’aspecte visual.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">HTML</label><label for="__tabbed_8_2">Markdown</label><label for="__tabbed_8_3">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un text en <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>negreta<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Aquest és un text en <span class="gs">**negreta**</span>.
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+Aquest és un text en <strong>negreta</strong>.
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Referència</p>
+<ul>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/b">Referència en la documentació de Mozilla</a></li>
+<li><a href="https://www.w3schools.com/tags/tag_b.asp">Referència en W3Schools</a></li>
+</ul>
+</div>
+<ul>
+<li><strong>L’etiqueta <code>&lt;strong&gt;</code>‘</strong>: s’utilitza per a donar <strong>èmfasi</strong> al text, mostrant-lo normalment en <strong>negreta</strong>. A diferència de l’etiqueta <code>&lt;b&gt;</code> , si que aporta un <strong>significat semàntic</strong> especial, ja que independentment de l’estil visual concret, <strong>indica que el contingut d’aquesta etiqueta és important</strong>.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">HTML</label><label for="__tabbed_9_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un text <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>important<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+Aquest és un text <strong>important</strong>.
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Referència</p>
+<ul>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/strong">Referència en la documentació de Mozilla</a></li>
+<li><a href="https://www.w3schools.com/tags/tag_strong.asp">Referència en W3Schools</a></li>
+</ul>
+</div>
+<ul>
+<li><strong>L’etiqueta <code>&lt;i&gt;</code></strong>: S’utilitza per canviar l’estil visual del text a <strong>cursiva</strong> (itàlica). No proporciona cap significat semàntic addicional per a les eines d’accessibilitat i per als motors de cerca.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:3"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">HTML</label><label for="__tabbed_10_2">Markdown</label><label for="__tabbed_10_3">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un text en <span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>cursiva<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Aquest és un text en <span class="ge">*cursiva*</span>.
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+Aquest és un text en <em>cursiva</em>.
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Referència</p>
+<ul>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/i">Referència en la documentació de Mozilla</a></li>
+<li><a href="https://www.w3schools.com/tags/tag_i.asp">Referència en W3Schools</a></li>
+</ul>
+</div>
+<ul>
+<li><strong>L’etiqueta <code>&lt;em&gt;</code></strong>: Té com a principal objectiu <strong>emfatitzar un text</strong>, i a més de mostrar-lo normalment en <strong>cursiva</strong>, indica que el seu contingut te un significant especial o rellevant especial dins de la pàgina. Aquesta importància semàntica és interpretada per les eines d’accessibilitat i els motors de cerca.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">HTML</label><label for="__tabbed_11_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és un text en <span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>emfatitzat<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<p>Aquest és un text en <em>emfatitzat</em>.</p>
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Referència</p>
+<ul>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/em">Referència en la documentació de Mozilla</a></li>
+<li><a href="https://www.w3schools.com/tags/tag_em.asp">Referència en W3Schools</a></li>
+</ul>
+</div>
+<ul>
+<li><strong>L’etiqueta <code>&lt;small&gt;</code></strong>: Indica que el contingut d’aquesta te una <strong>importància menor</strong> que el text que l’envolta i a més representa el text en una mida més menuda que la resta.  S’utilitza per exemple per a notes a peu de pàgina, crèdits, apartats legals, etcètera.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">HTML</label><label for="__tabbed_12_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Exemple d’small <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>Última actualització: 6-10-2025<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<p>Exemple d’small <small>Última actualització: 6-10-2025</small>
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Referència</p>
+<ul>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/small">Referència en la documentació de Mozilla</a></li>
+<li><a href="https://www.w3schools.com/tags/tag_small.asp">Referència en W3Schools</a></li>
+</ul>
+</div>
+<ul>
+<li><strong>L’etiqueta <code>‘&lt;sub&gt;</code></strong>: S’utilitza per a marcar aquell text que ha de ser representat com a un <strong>subíndex</strong>, mostrant-lo en una posició inferior i més menuda que la resta del text. S’utilitza especialment per a mostrar fórmules químiques, expressions matemàtiques o contingut tècnic. Més enllà de la presentació visual, no te cap importància semàntica especial.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">HTML</label><label for="__tabbed_13_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>La formula de l&#39;aigua és H<span class="p">&lt;</span><span class="nt">sub</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">sub</span><span class="p">&gt;</span>O<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<p>La formula de l'aigua és H<sub>2</sub>O</p>
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Referència</p>
+<ul>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/sub">Referència en la documentació de Mozilla</a></li>
+<li><a href="https://www.w3schools.com/tags/tag_sub.asp">Referència en W3Schools</a></li>
+</ul>
+</div>
+<ul>
+<li>L’etiqueta <code>&lt;sup&gt;</code>: S’utilitza per a marcar un text en forma de <strong>superíndex</strong>, és a dir, en una posició superior i lleugerament més menuda que la resta de text. S’utilitza per a mostrar potències, exponents, indicadors ordinals o altres notacions especials. Al marge de la representació visual, no aporta cap significat especial per a l’accessibilitat o els motors de cerca.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">HTML</label><label for="__tabbed_14_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>2<span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span>3<span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;</span> representa dos elevat a la tercera potència.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<p>2<sup>3</sup> representa dos elevat a la tercera potència.</p>
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Referència</p>
+<ul>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/sup">Referència en la documentació de Mozilla</a></li>
+<li><a href="https://www.w3schools.com/tags/tag_sup.asp">Referència en W3Schools</a></li>
+</ul>
+</div>
+<ul>
+<li><strong>L’etiqueta <code>&lt;ins&gt;</code></strong>: Quan un text o contingut està marcat per esta etiqueta significa que ha sigut <strong>afegit o canviat</strong> des de l’última versió de l’anterior document. Generalment subratlla el text marcat, però esta no és la seua finalitat. Per a subratllar text cal utilitzar altres elements que veurem més endavant. L’etiqueta <code>&lt;ins&gt;</code>consta de dos atributs específics: <code>cite</code> i ’<code>datetime</code>.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">HTML</label><label for="__tabbed_15_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquesta és una <span class="p">&lt;</span><span class="nt">ins</span><span class="p">&gt;</span>nova<span class="p">&lt;/</span><span class="nt">ins</span><span class="p">&gt;</span> paraula afegida al text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<p>Aquesta és una <ins>nova</ins> paraula afegida al text</p>
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Referència</p>
+<ul>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/ins">Referència en la documentació de Mozilla</a></li>
+<li><a href="https://www.w3schools.com/tags/tag_ins.asp">Referència en W3Schools</a></li>
+</ul>
+</div>
+<ul>
+<li><strong>L’etiqueta <code>&lt;del&gt;</code></strong>: En aquest cas, l’etiqueta indica si el text ha estat <strong>eliminat</strong> de l’anterior versió del document. És útil per a la comparació de revisions de text i consta dels mateixos atributs que l’etiqueta <code>&lt;ins&gt;</code>.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">HTML</label><label for="__tabbed_16_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquesta és una <span class="p">&lt;</span><span class="nt">del</span><span class="p">&gt;</span>paraula eliminada<span class="p">&lt;/</span><span class="nt">del</span><span class="p">&gt;</span> del text.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<p>Aquesta és una <del>paraula eliminada</del> del text.</p>
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Referència</p>
+<ul>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/del">Referència en la documentació de Mozilla</a></li>
+<li><a href="https://www.w3schools.com/tags/tag_del.asp">Referència en W3Schools</a></li>
+</ul>
+</div>
+<ul>
+<li>L’etiqueta <code>&lt;mark&gt;</code>:  Aquesta etiqueta s’utilitza per a <strong>ressaltar</strong> un text dins d’un paràgraf o altra secció, fent-lo més visible, però sense que aporte un significat especial al contingut, només afectant a les seues propietats d’estil.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">HTML</label><label for="__tabbed_17_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>La <span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>conferència<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span> tindrà lloc a l&#39;<span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>auditori<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span> principal<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<p>La <mark>conferència</mark> tindrà lloc a l'<mark>auditori</mark> principal</p>
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Referència</p>
+<ul>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/mark">Referència en la documentació de Mozilla</a></li>
+<li><a href="https://www.w3schools.com/tags/tag_mark.asp">Referència en W3Schools</a></li>
+</ul>
+</div>
+<h3 id="referencies-a-entitats-html">Referències a entitats HTML</h3>
+<p>Una referència a entitat d'HTML, no és una etiqueta com a tal, sinò una seqüència de caràcters que es fa servir per <strong>representar caràcters especials o reservats</strong> que podrien ser interpretats de manera incorrecta en un document HTML. Les entitats HTML ens permeten incloure caràcters com <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, cometes dobles (<code>"</code>), cometes simples (<code>'</code>) i altres caràcters especials sense interferir amb la sintaxi del codi HTML.</p>
+<p>L'ús de la codificació de caràcters en HTML és fonamental per evitar errors de sintaxi i garantir que el text es mostre correctament en el navegador. També és important per a la seguretat web, ja que evita la interpretació incorrecta de caràcters i pot prevenir atacs de script entre llocs web (cross-site scripting, o XSS).</p>
+<p>A continuació, es mostren alguns dels caràcters especials més comuns i les seues entitats HTML equivalents:</p>
+<table>
+<thead>
+<tr>
+<th>Entitat</th>
+<th>Símbol</th>
+<th>Significat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;lt;</code></td>
+<td><code>&lt;</code></td>
+<td>menor que</td>
+</tr>
+<tr>
+<td><code>&amp;gt;</code></td>
+<td><code>&gt;</code></td>
+<td>major que</td>
+</tr>
+<tr>
+<td><code>&amp;amp;</code></td>
+<td><code>&amp;</code></td>
+<td>ampersand</td>
+</tr>
+<tr>
+<td><code>&amp;nbsp;</code></td>
+<td>‘ ‘</td>
+<td>espai en blanc</td>
+</tr>
+<tr>
+<td><code>&amp;quot;</code></td>
+<td><code>"</code></td>
+<td>cometes dobles</td>
+</tr>
+<tr>
+<td><code>&amp;apos;</code> o <code>&amp;#39;</code></td>
+<td><code>'</code></td>
+<td>cometes simples</td>
+</tr>
+</tbody>
+</table>
+<p>Per regla general, a l’hora de fer referència a les entitats o podem fer-ho pel seu nom o pel seu codi</p>
+<p>Si necessites representar un caràcter especial en HTML, simplement substitueix el caràcter pel seu equivalent d'entitat HTML. Per exemple, si vols mostrar una cometa doble (<code>"</code>) en el teu codi HTML, utilitzaries <code>&amp;quot;</code>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">HTML</label><label for="__tabbed_18_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Els caràcters <span class="ni">&amp;lt;</span>, <span class="ni">&amp;gt;</span>, <span class="ni">&amp;quot;</span> i <span class="ni">&amp;amp;</span> poden donar problemes amb els texts en HTML<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<p>Els caràcters &lt;, &gt;, &quot; y &amp; poden donar problemes amb els texts en HTML</p>
+</div></p>
+</div>
+</div>
+</div>
+<p>A més dels caràcters especials, també hi ha altres caràcters que podrien requerir codificació en HTML, com els caràcters no ASCII o els caràcters que tenen significats especials en el codi HTML, per a obtenir més informació accedeix al <a href="https://www.w3schools.com/html/html_entities.asp">Manual</a> de la organització <a href="https://www.w3schools.com/html">W3Schools</a>.</p>
+<h3 id="enllacos">Enllaços</h3>
+<p>Un <strong>enllaç</strong> o <strong>hiperenllaç</strong> en HTML (hyperlink en anglès) és un element que permet als usuaris navegar i <strong>accedir a altres pàgines web</strong>, recursos en línia o ubicacions dins d'una mateixa pàgina. Els enllaços són la <strong>base de la navegació web</strong>, ja que <strong>permeten connectar i vincular diferents pàgines i recursos</strong>, facilitant la interconnexió d'informació a través d'Internet.</p>
+<p>Els enllaços s'implementen mitjançant l'ús de l'etiqueta <code>&lt;a&gt;</code>. Aquesta etiqueta inclou, entre altres, l'atribut <code>href</code>, que especifica la URI (Uniform Resource Identifier) o la ubicació de destinació a la qual l'enllaç redirigeix l'usuari.  El text o els altres elements que es troben dins de l’etiqueta es converteixen des d’eixe moment en enllaços que l’usuari haurà de clicar per a redirigir a la pagina o ubicació especificada.</p>
+<p>L’atribut <code>target</code> especifica com s’ha d’obrir l’enllaç, per exemple si ho fa en una finestra, en una pestanya nova, o en la pestanya actual. Els valors més comuns d’aquest atribut són:</p>
+<table>
+<thead>
+<tr>
+<th>Valor del target</th>
+<th>Significat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_blank</code></td>
+<td>Obrir en una finestra nova</td>
+</tr>
+<tr>
+<td><code>_self</code></td>
+<td>Obrir en la mateixa pestanya des d’on es troba l’enllaç</td>
+</tr>
+<tr>
+<td><code>_parent</code></td>
+<td>Obrir en la finestra <em>pare</em></td>
+</tr>
+</tbody>
+</table>
+<p>Els enllaços poden ser utilitzats per realitzar diverses accions, com ara:</p>
+<ul>
+<li><strong>Navegació web</strong>: Enllaços a altres pàgines web, llocs d'Internet o recursos externs.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">HTML</label><label for="__tabbed_19_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://portal.edu.gva.es/iesjaumeeljust/&quot;</span><span class="p">&gt;</span>IES Jaume II el Just<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://portal.edu.gva.es/iesjaumeeljust/&quot;</span>  <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>Obrim en una nova finestra<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<a href="https://portal.edu.gva.es/iesjaumeeljust/">IES Jaume II el Just</a> <a href="https://portal.edu.gva.es/iesjaumeeljust/"  target="_blank">Obrim en una nova finestra</a>
+</div></p>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Descàrrega de fitxers</strong>: Enllaços per a la descàrrega de fitxers, com documents PDF, imatges, música o altres tipus de fitxers.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="20:2"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><input id="__tabbed_20_2" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="__tabbed_20_1">HTML</label><label for="__tabbed_20_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://portal.edu.gva.es/iesjaumeeljust/wp-content/uploads/sites/33/2024/09/SOL-LICITUD-CONVALIDACIO-.pdf&quot;</span> <span class="na">download</span><span class="p">&gt;</span>IES Jaume II el Just<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<a href="https://portal.edu.gva.es/iesjaumeeljust/wp-content/uploads/sites/33/2024/09/SOL-LICITUD-CONVALIDACIO-.pdf" download>Sol·licitud de convalidació de mòduls</a>
+</div></p>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Enllaços de correu</strong>: Creació d'enllaços que obrin l’aplicació de correu predefinida amb la direcció de correu especificada.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="21:2"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">HTML</label><label for="__tabbed_21_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;mailto:ja.murciaandres.edu.gva.es&quot;</span><span class="p">&gt;</span>Professor<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<a href="mailto:ja.murciaandres.edu.gva.es">Professor</a>
+</div></p>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Enllaços a telèfons</strong>: Enllaços que obrin l’aplicació de telèfon per a realitzar una telefonada.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="22:2"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><input id="__tabbed_22_2" name="__tabbed_22" type="radio" /><div class="tabbed-labels"><label for="__tabbed_22_1">HTML</label><label for="__tabbed_22_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;tel: +34962829995&quot;</span><span class="p">&gt;</span>Telefona l&#39;IES<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<a href="tel: +34962829995">Telefona l'IES</a>
+</div></p>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Ancoratges interns</strong>: Creació d'enllaços dins de la mateixa pàgina per permetre als usuaris desplaçar-se a diferents seccions del contingut, posant l'<code>href</code> l'<code>id</code> de l’element on volem desplaçar-nos.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="23:2"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><input id="__tabbed_23_2" name="__tabbed_23" type="radio" /><div class="tabbed-labels"><label for="__tabbed_23_1">HTML</label><label for="__tabbed_23_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="cm">&lt;!-- Identifiquem l’etiqueta amb l’atribut id seccio2  --&gt;</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="p">&lt;</span><span class="nt">h2</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;seccio2&quot;</span><span class="p">&gt;</span>`Secció 2<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> Altres paràgrafs o continguts <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="cm">&lt;!-- Indiquem que l’enllaç apunta a seccio2 --&gt;</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#seccio2&quot;</span><span class="p">&gt;</span>`Ves a la secció `2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>  
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<!-- Identifiquem l’etiqueta amb l’atribut id seccio2  -->
+<h2 id="seccio2"><code>Secció</code>2</h2>
+<p> Altres paràgrafs o continguts </p>
+<!-- Indiquem que l’enllaç apunta a seccio2 --> 
+<a href="#seccio2"><code>Ves a la secció</code>2</a><br />
+</div></p>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Navegació i interacció amb JavaScript</strong>: L'etiqueta <code>&lt;a&gt;</code> també es pot utilitzar com a part de la interacció mitjançant JavaScript per realitzar accions específiques, com la mostra d'elements ocults o la connexió amb funcionalitats avançades de JavaScript.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="24:2"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><div class="tabbed-labels"><label for="__tabbed_24_1">HTML</label><label for="__tabbed_24_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;javascript:alert(&#39;Hola Mon!&#39;);&quot;</span><span class="p">&gt;</span> Executa JavaScript <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<a href="javascript:alert('Hola Mon!');"> Executa JavaScript </a>
+</div></p>
+</div>
+</div>
+</div>
+<h3 id="llistes">Llistes</h3>
+<h4 id="llistes-no-ordenades">Llistes no ordenades</h4>
+<p>Una llista no ordenada és un conjunt de línies de text, precedides generalment d’algun símbol gràfic que remarca el caràcter de llista. Aquesta tipus de llista es defineix amb les etiquetes <code>&lt;ul&gt;&lt;/ul&gt;</code> i cada un dels seus elements o items mitjançant <code>&lt;li&gt;&lt;/li&gt;</code> (<em>list item</em>).</p>
+<p>Els pics o vinyetes de la llista poden ser substituïts per altres elements gràfics, qüestió que podrem observar més endavant amb d’aplicacions d’estils.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="25:2"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><input id="__tabbed_25_2" name="__tabbed_25" type="radio" /><div class="tabbed-labels"><label for="__tabbed_25_1">HTML</label><label for="__tabbed_25_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Sota<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Cavall<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Rei<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<ul>
+    <li>Sota</li>
+    <li>Cavall</li>
+    <li>Rei</li>
+</ul>
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Referència</p>
+<ul>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/ul">Referència en la documentació de Mozilla</a></li>
+<li><a href="https://www.w3schools.com/html/html_lists_unordered.asp">Referència en W3Schools</a></li>
+</ul>
+</div>
+<h4 id="llistes-ordenades">Llistes ordenades</h4>
+<p>Les llistes ordenades situen davant de cada element o item un número, lletra o lletra romana de manera correlativa. De manera predeterminada s’assigna l’estil de numeració.
+L’inici i el final de la llista s’indica amb <code>&lt;ol&gt;&lt;/ol&gt;</code>. Els elements de la llista van també entre <code>&lt;li&gt;&lt;/li&gt;</code>. Les llistes ordenades tenen l’atribut type que defineix el tipus de llista amb les següent especificacions:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Valor</th>
+<th style="text-align: left;">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>type="1"</code></td>
+<td style="text-align: left;">Elements numerats amb números (valor predeterminat)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>type="A"</code></td>
+<td style="text-align: left;">Elements numerats amb una lletra majúscula</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>type="a"</code></td>
+<td style="text-align: left;">Elements numerats amb una lletra minúscula</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>type="I"</code></td>
+<td style="text-align: left;">Elements numerats amb una lletra romana majúscula</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>type="i"</code></td>
+<td style="text-align: left;">Elements numerats amb una lletra romana en minúscula</td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="26:2"><input checked="checked" id="__tabbed_26_1" name="__tabbed_26" type="radio" /><input id="__tabbed_26_2" name="__tabbed_26" type="radio" /><div class="tabbed-labels"><label for="__tabbed_26_1">HTML</label><label for="__tabbed_26_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Primer element de la llista<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Segon element de la llista<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Tercer element de la llista<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<ol>
+    <li>Primer element de la llista</li>
+    <li>Segon element de la llista</li>
+    <li>Tercer element de la llista</li>
+</ol>
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Referència</p>
+<ul>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/ol">Referència en la documentació de Mozilla</a></li>
+<li><a href="https://www.w3schools.com/html/html_lists_ordered.asp">Referència en W3Schools</a></li>
+</ul>
+</div>
+<h3 id="llistes-de-definicio">Llistes de definició</h3>
+<p>La llista de definició és un element que permet organitzar la informació en forma de parells de termes i descripció. Aquestes llistes són útils quan volem proporcionar explicacions o descripcions de termes. L’inici i el final de l’estructura s’indica amb les etiquetes <code>&lt;dl&gt;</code> i <code>&lt;/dl&gt;</code>, els termes es defineixen amb <code>&lt;dt&gt;</code> i <code>&lt;/dt&gt;</code> i les definicions amb <code>&lt;dd&gt;</code> i <code>&lt;/dd&gt;</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="27:2"><input checked="checked" id="__tabbed_27_1" name="__tabbed_27" type="radio" /><input id="__tabbed_27_2" name="__tabbed_27" type="radio" /><div class="tabbed-labels"><label for="__tabbed_27_1">HTML</label><label for="__tabbed_27_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Primer Plat<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>    <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>Paella, Fideuà o Arròs Negre<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Segon Plat<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>    <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>Entrecot, Lluç o Llobarro<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span><span id="__span-41-6"><a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Postre<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+</span><span id="__span-41-7"><a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a>    <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>Flam, Natilles o Fruita<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span><span id="__span-41-8"><a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="p">&lt;/</span><span class="nt">dl</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<dl>
+    <dt>Primer Plat</dt>
+    <dd>Paella, Fideuà o Arròs Negre</dd>
+    <dt>Segon Plat</dt>
+    <dd>Entrecot, Lluç o Llobarro</dd>
+    <dt>Postre</dt>
+    <dd>Flam, Natilles o Fruita</dd>
+</dl></p>
+</div>
+</div>
+</div>
+<h3 id="combinacions-de-llistes">Combinacions de llistes</h3>
+<p>És possible combinar diferents tipus de llistes donat que un element <code>&lt;li&gt;</code> o <code>&lt;dd&gt;</code> no només pot allotjar text, també pot allotjar altres elements com per exemple llistes.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="28:2"><input checked="checked" id="__tabbed_28_1" name="__tabbed_28" type="radio" /><input id="__tabbed_28_2" name="__tabbed_28" type="radio" /><div class="tabbed-labels"><label for="__tabbed_28_1">HTML</label><label for="__tabbed_28_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Primer Plat<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>    <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Paella<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Fideuà<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Arròs Negre<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-42-8"><a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a>        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-42-9"><a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a>    <span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span><span id="__span-42-10"><a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a>    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Segon Plat<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+</span><span id="__span-42-11"><a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a>        <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span><span id="__span-42-12"><a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a>            <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-42-13"><a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a>                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Entrecot<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-42-14"><a id="__codelineno-42-14" name="__codelineno-42-14" href="#__codelineno-42-14"></a>                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Lluç<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-42-15"><a id="__codelineno-42-15" name="__codelineno-42-15" href="#__codelineno-42-15"></a>                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Llobarro<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-42-16"><a id="__codelineno-42-16" name="__codelineno-42-16" href="#__codelineno-42-16"></a>            <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-42-17"><a id="__codelineno-42-17" name="__codelineno-42-17" href="#__codelineno-42-17"></a>        <span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span><span id="__span-42-18"><a id="__codelineno-42-18" name="__codelineno-42-18" href="#__codelineno-42-18"></a><span class="p">&lt;/</span><span class="nt">dl</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+<dl>
+    <dt>Primer Plat</dt>
+    <dd>
+        <ul>
+            <li>Paella</li>
+            <li>Fideuà</li>
+            <li>Arròs Negre</li>
+        </ul>
+    </dd>
+    <dt>Segon Plat</dt>
+        <dd>
+            <ul>
+                <li>Entrecot</li>
+                <li>Lluç</li>
+                <li>Llobarro</li>
+            </ul>
+        </dd>
+    </dt>
+</dl></p>
+</div>
+</div>
+</div>
+<h3 id="taules">Taules</h3>
+<p>Una taula és bàsicament una quadricula on Els elements de la quadrícula es denominen cel·les. En sentit horitzontal, les cel·les s’agrupen en files i en sentit vertical en columnes.</p>
+<p>Les taules es queden delimitades per les etiquetes <code>&lt;table&gt;&lt;/table&gt;</code>. Les files s’indiquen mitjançant les etiquetes <code>&lt;tr&gt;</code> i <code>&lt;</code>/<code>tr&gt;</code>. I les cel·les de cada fila s’indiquen amb <code>&lt;td&gt;</code> i <code>&lt;/td&gt;</code>.  </p>
+<p>A l’hora de definir una taula cal tindre en compte que totes les files han de tenir el mateix nombre de cel·les.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="29:2"><input checked="checked" id="__tabbed_29_1" name="__tabbed_29" type="radio" /><input id="__tabbed_29_2" name="__tabbed_29" type="radio" /><div class="tabbed-labels"><label for="__tabbed_29_1">HTML</label><label for="__tabbed_29_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span> 
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 1 --&gt;</span> 
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-43-6"><a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 2 --&gt;</span>
+</span><span id="__span-43-7"><a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-43-8"><a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-43-9"><a id="__codelineno-43-9" name="__codelineno-43-9" href="#__codelineno-43-9"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-43-10"><a id="__codelineno-43-10" name="__codelineno-43-10" href="#__codelineno-43-10"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+    <table border="1"> 
+        <tr><!-- Fila 1 --> 
+            <td>Contingut 1</td>
+            <td>Contingut 2</td>
+        </tr>
+        <tr><!-- Fila 2 -->
+            <td>Contingut 3</td>
+            <td>Contingut 4</td>
+        </tr>
+    </table>
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Referència</p>
+<ul>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/table">Referència en la documentació de Mozilla</a></li>
+<li><a href="https://www.w3schools.com/html/html_tables.asp">Referència en W3Schools</a></li>
+</ul>
+</div>
+<h4 id="titol-i-capcaleres-de-la-taula">Títol i capçaleres de la taula</h4>
+<p>De vegades les taules inclouen un títol, el qual s’estableix amb les etiquetes <code>&lt;caption&gt;</code> i <code>&lt;</code>/<code>caption&gt;</code>. Aquest element ocupa una fila sencera i obligatòriament  ha d’anar en la part superior de la taula.</p>
+<p>Per altra, banda cap la possibilitat de marcar la fila superior com a capçalera, i diferenciar les cel·les superiors de cada columna amb les etiquetes <code>&lt;th&gt;</code> i <code>&lt;/th&gt;,</code> que els navegadors solen presentar-les amb negreta i centrades en cada cel·la.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="30:2"><input checked="checked" id="__tabbed_30_1" name="__tabbed_30" type="radio" /><input id="__tabbed_30_2" name="__tabbed_30" type="radio" /><div class="tabbed-labels"><label for="__tabbed_30_1">HTML</label><label for="__tabbed_30_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span> 
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Encapçalament --&gt;</span>
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 1<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 2<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-44-6"><a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 1 --&gt;</span> 
+</span><span id="__span-44-7"><a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-44-8"><a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-44-9"><a id="__codelineno-44-9" name="__codelineno-44-9" href="#__codelineno-44-9"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-44-10"><a id="__codelineno-44-10" name="__codelineno-44-10" href="#__codelineno-44-10"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 2 --&gt;</span>
+</span><span id="__span-44-11"><a id="__codelineno-44-11" name="__codelineno-44-11" href="#__codelineno-44-11"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-44-12"><a id="__codelineno-44-12" name="__codelineno-44-12" href="#__codelineno-44-12"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-44-13"><a id="__codelineno-44-13" name="__codelineno-44-13" href="#__codelineno-44-13"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-44-14"><a id="__codelineno-44-14" name="__codelineno-44-14" href="#__codelineno-44-14"></a>        <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>Títol de la taula<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+</span><span id="__span-44-15"><a id="__codelineno-44-15" name="__codelineno-44-15" href="#__codelineno-44-15"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+    <table border="1"> 
+        <tr><!-- Encapçalament -->
+            <th>Capçalera columna 1</th>
+            <th>Capçalera columna 2</th>
+        </tr>
+        <tr><!-- Fila 1 --> 
+            <td>Contingut 1</td>
+            <td>Contingut 2</td>
+        </tr>
+        <tr><!-- Fila 2 -->
+            <td>Contingut 3</td>
+            <td>Contingut 4</td>
+        </tr>
+        <caption>Títol de la taula</caption>
+    </table>
+</div></p>
+</div>
+</div>
+</div>
+<h4 id="combinacio-de-celles">Combinació de cel·les</h4>
+<p>Es possible que alguna vegada necessitem que una cel·la vaja més enllà de la seua fila o la seua columna. Per a això farem ús de de cel·la <code>colspan</code> (per a columnes) i <code>rowspan</code> (per a files) indicant a quantes files o columnes s’expandiran.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="31:2"><input checked="checked" id="__tabbed_31_1" name="__tabbed_31" type="radio" /><input id="__tabbed_31_2" name="__tabbed_31" type="radio" /><div class="tabbed-labels"><label for="__tabbed_31_1">HTML</label><label for="__tabbed_31_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Encapçalament --&gt;</span>
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 1<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 2<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 3<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-45-7"><a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 1 --&gt;</span>
+</span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-45-9"><a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a>         <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span>Contingut 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-45-10"><a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-45-11"><a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 2 --&gt;</span>
+</span><span id="__span-45-12"><a id="__codelineno-45-12" name="__codelineno-45-12" href="#__codelineno-45-12"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-45-13"><a id="__codelineno-45-13" name="__codelineno-45-13" href="#__codelineno-45-13"></a>        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">rowspan</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span>Contingut 4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-45-14"><a id="__codelineno-45-14" name="__codelineno-45-14" href="#__codelineno-45-14"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 5<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-45-15"><a id="__codelineno-45-15" name="__codelineno-45-15" href="#__codelineno-45-15"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-45-16"><a id="__codelineno-45-16" name="__codelineno-45-16" href="#__codelineno-45-16"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 3 --&gt;</span>
+</span><span id="__span-45-17"><a id="__codelineno-45-17" name="__codelineno-45-17" href="#__codelineno-45-17"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 6<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-45-18"><a id="__codelineno-45-18" name="__codelineno-45-18" href="#__codelineno-45-18"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 7<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-45-19"><a id="__codelineno-45-19" name="__codelineno-45-19" href="#__codelineno-45-19"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-45-20"><a id="__codelineno-45-20" name="__codelineno-45-20" href="#__codelineno-45-20"></a>    <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>Taula amb cel·les combinades<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+</span><span id="__span-45-21"><a id="__codelineno-45-21" name="__codelineno-45-21" href="#__codelineno-45-21"></a><span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+        <table border="1">
+        <tr><!-- Encapçalament -->
+            <th>Capçalera columna 1</th>
+            <th>Capçalera columna 2</th>
+            <th>Capçalera columna 3</th>
+        </tr>
+        <tr><!-- Fila 1 -->
+            <td>Contingut 1</td>
+            <td colspan="2">Contingut 2</td>
+        </tr>
+        <tr><!-- Fila 2 -->
+            <td>Contingut 3</td>
+            <td rowspan="2">Contingut 4</td>
+            <td>Contingut 5</td>
+        </tr>
+        <tr><!-- Fila 3 -->
+            <td>Contingut 6</td>
+            <td>Contingut 7</td>
+        </tr>
+        <caption>Taula amb cel·les combinades</caption>
+    </table>
+</div></p>
+</div>
+</div>
+</div>
+<h4 id="columnes">Columnes</h4>
+<p>En un primer moment HTML no contempla les columnes com a element de treball: L’element bàsic dins de la taula és la cel·la i aquesta s’agrupa en files. HTML5 incorpora l’etiqueta <code>colgroup</code> que especifica un format per a una o més columnes. Aquesta etiqueta es situa després de l’etiqueta caption, si és el cas, i després de qualsevol altre element de fila o altres. El colgroup alberga en el seu interior etiquetes <code>col</code> que fan referència a l’estil de la columna. L’etiqueta col inclou l’atribut <code>span</code> que indica a quantes columnes s’ha d’expandir el seu estil.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="32:2"><input checked="checked" id="__tabbed_32_1" name="__tabbed_32" type="radio" /><input id="__tabbed_32_2" name="__tabbed_32" type="radio" /><div class="tabbed-labels"><label for="__tabbed_32_1">HTML</label><label for="__tabbed_32_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Encapçalament --&gt;</span>
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 1<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 2<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 3<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-46-6"><a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-46-7"><a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 1 --&gt;</span>
+</span><span id="__span-46-8"><a id="__codelineno-46-8" name="__codelineno-46-8" href="#__codelineno-46-8"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-46-9"><a id="__codelineno-46-9" name="__codelineno-46-9" href="#__codelineno-46-9"></a>         <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span>Contingut 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-46-10"><a id="__codelineno-46-10" name="__codelineno-46-10" href="#__codelineno-46-10"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-46-11"><a id="__codelineno-46-11" name="__codelineno-46-11" href="#__codelineno-46-11"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 2 --&gt;</span>
+</span><span id="__span-46-12"><a id="__codelineno-46-12" name="__codelineno-46-12" href="#__codelineno-46-12"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-46-13"><a id="__codelineno-46-13" name="__codelineno-46-13" href="#__codelineno-46-13"></a>        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">rowspan</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span>Contingut 4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-46-14"><a id="__codelineno-46-14" name="__codelineno-46-14" href="#__codelineno-46-14"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 5<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-46-15"><a id="__codelineno-46-15" name="__codelineno-46-15" href="#__codelineno-46-15"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-46-16"><a id="__codelineno-46-16" name="__codelineno-46-16" href="#__codelineno-46-16"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 3 --&gt;</span>
+</span><span id="__span-46-17"><a id="__codelineno-46-17" name="__codelineno-46-17" href="#__codelineno-46-17"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 6<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-46-18"><a id="__codelineno-46-18" name="__codelineno-46-18" href="#__codelineno-46-18"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 7<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-46-19"><a id="__codelineno-46-19" name="__codelineno-46-19" href="#__codelineno-46-19"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-46-20"><a id="__codelineno-46-20" name="__codelineno-46-20" href="#__codelineno-46-20"></a>    <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>Taula amb cel·les combinades<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+</span><span id="__span-46-21"><a id="__codelineno-46-21" name="__codelineno-46-21" href="#__codelineno-46-21"></a><span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+        <table border="1">
+        <tr><!-- Encapçalament -->
+            <th>Capçalera columna 1</th>
+            <th>Capçalera columna 2</th>
+            <th>Capçalera columna 3</th>
+        </tr>
+        <tr><!-- Fila 1 -->
+            <td>Contingut 1</td>
+            <td colspan="2">Contingut 2</td>
+        </tr>
+        <tr><!-- Fila 2 -->
+            <td>Contingut 3</td>
+            <td rowspan="2">Contingut 4</td>
+            <td>Contingut 5</td>
+        </tr>
+        <tr><!-- Fila 3 -->
+            <td>Contingut 6</td>
+            <td>Contingut 7</td>
+        </tr>
+        <colgroup>
+            <col span="2" style="background-color:cyan">
+            <col style="background-color:magenta">
+        </colgroup>
+        <caption>Taula amb cel·les combinades</caption>
+    </table>
+</div></p>
+</div>
+</div>
+</div>
+<h4 id="blocs-de-files">Blocs de files</h4>
+<p>Existeix la possibilitat d’agrupar les files en tres blocs: <code>thead</code> per a files que representen la capçalera; <code>tbody</code> per a files que representen el cos; i <code>tfoot</code> per a files que representen el peu o resum de la taula. Cada un d’aquests elements agrupa elements <code>tr</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="33:2"><input checked="checked" id="__tabbed_33_1" name="__tabbed_33" type="radio" /><input id="__tabbed_33_2" name="__tabbed_33" type="radio" /><div class="tabbed-labels"><label for="__tabbed_33_1">HTML</label><label for="__tabbed_33_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>        <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Encapçalament --&gt;</span>
+</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>                <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 1<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>                <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 2<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-47-6"><a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a>                <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Capçalera columna 3<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span id="__span-47-7"><a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-47-8"><a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a>        <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+</span><span id="__span-47-9"><a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a>        <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+</span><span id="__span-47-10"><a id="__codelineno-47-10" name="__codelineno-47-10" href="#__codelineno-47-10"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 1 --&gt;</span>
+</span><span id="__span-47-11"><a id="__codelineno-47-11" name="__codelineno-47-11" href="#__codelineno-47-11"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-47-12"><a id="__codelineno-47-12" name="__codelineno-47-12" href="#__codelineno-47-12"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-47-13"><a id="__codelineno-47-13" name="__codelineno-47-13" href="#__codelineno-47-13"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-47-14"><a id="__codelineno-47-14" name="__codelineno-47-14" href="#__codelineno-47-14"></a>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-47-15"><a id="__codelineno-47-15" name="__codelineno-47-15" href="#__codelineno-47-15"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 2 --&gt;</span>
+</span><span id="__span-47-16"><a id="__codelineno-47-16" name="__codelineno-47-16" href="#__codelineno-47-16"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-47-17"><a id="__codelineno-47-17" name="__codelineno-47-17" href="#__codelineno-47-17"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 5<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-47-18"><a id="__codelineno-47-18" name="__codelineno-47-18" href="#__codelineno-47-18"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 6<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-47-19"><a id="__codelineno-47-19" name="__codelineno-47-19" href="#__codelineno-47-19"></a>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-47-20"><a id="__codelineno-47-20" name="__codelineno-47-20" href="#__codelineno-47-20"></a>        <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+</span><span id="__span-47-21"><a id="__codelineno-47-21" name="__codelineno-47-21" href="#__codelineno-47-21"></a>        <span class="p">&lt;</span><span class="nt">tfoot</span><span class="p">&gt;</span>
+</span><span id="__span-47-22"><a id="__codelineno-47-22" name="__codelineno-47-22" href="#__codelineno-47-22"></a>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span><span class="cm">&lt;!-- Fila 3 --&gt;</span>
+</span><span id="__span-47-23"><a id="__codelineno-47-23" name="__codelineno-47-23" href="#__codelineno-47-23"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 7<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-47-24"><a id="__codelineno-47-24" name="__codelineno-47-24" href="#__codelineno-47-24"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 8<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-47-25"><a id="__codelineno-47-25" name="__codelineno-47-25" href="#__codelineno-47-25"></a>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Contingut 9<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span id="__span-47-26"><a id="__codelineno-47-26" name="__codelineno-47-26" href="#__codelineno-47-26"></a>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span><span id="__span-47-27"><a id="__codelineno-47-27" name="__codelineno-47-27" href="#__codelineno-47-27"></a>        <span class="p">&lt;/</span><span class="nt">tfoot</span><span class="p">&gt;</span>
+</span><span id="__span-47-28"><a id="__codelineno-47-28" name="__codelineno-47-28" href="#__codelineno-47-28"></a>        <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>Taula amb thead, tbody i tfoot<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+</span><span id="__span-47-29"><a id="__codelineno-47-29" name="__codelineno-47-29" href="#__codelineno-47-29"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="color:black; font-family:Serif">
+        <table border="1">
+        <thead>
+            <tr><!-- Encapçalament -->
+                <th>Capçalera columna 1</th>
+                <th>Capçalera columna 2</th>
+                <th>Capçalera columna 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><!-- Fila 1 -->
+                <td>Contingut 1</td>
+                <td>Contingut 2</td>
+                <td>Contingut 3</td>
+            </tr>
+            <tr><!-- Fila 2 -->
+                <td>Contingut 4</td>
+                <td>Contingut 5</td>
+                <td>Contingut 6</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr><!-- Fila 3 -->
+                <td>Contingut 7</td>
+                <td>Contingut 8</td>
+                <td>Contingut 9</td>
+            </tr>
+        </tfoot>
+        <caption>Taula amb thead, tbody i tfoot</caption>
+    </table>
+</div></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Taules niuades</p>
+<p>De la mateixa manera que les llistes on l’element més bàsic, el <code>li</code>, pot allotjar una altra llista, a les taules, l’element més bàsic, que és la cel·la  representada per l’etiqueta <code>td</code>, també pot allotjar altres taules donant lloc a taules niuades o taules dins d’altres taules.</p>
+</div>
+<h3 id="imatges">Imatges</h3>
+<p>En un document HTML podem incloure imatges en diferents formats (jpg, gif, png...) a través de l’etiqueta <code>&lt;img&gt;</code>, que és una etiqueta d’autotancament. A més, l’etiqueta consta de l’atribut <code>src</code>, que fa referència a l’origen o adreça de la imatge i de l’atribut <code>alt</code>, que fa referència al text alternatiu que es mostrarà en cas que hi haja problemes per a mostrar la imatge. La seua sintaxi és la següent:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;url_o_ruta_a_la_imatge&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Text alternatiu&quot;</span><span class="p">/&gt;</span>
+</span></code></pre></div>
+<p>L’element img no sol anar directament en el <code>body</code>, si no dins d’altres elements com com paràgrafs, cel·les, títols, llistes o l'element contenidor <code>&lt;div&gt;</code> que veurem més endavant.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="34:2"><input checked="checked" id="__tabbed_34_1" name="__tabbed_34" type="radio" /><input id="__tabbed_34_2" name="__tabbed_34" type="radio" /><div class="tabbed-labels"><label for="__tabbed_34_1">HTML</label><label for="__tabbed_34_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://picsum.photos/300/200&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Imatge aleatòria&quot;</span><span class="p">/&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" href="http://picsum.photos/300/200" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="http://picsum.photos/300/200" alt="Imatge aleatòria"/></a></p>
+</div>
+</div>
+</div>
+<p>També podem especificar l'altura i l'amplada per a la imatge, expressades bé en píxels o en percentatge respecte al contenidor on es troba.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="35:2"><input checked="checked" id="__tabbed_35_1" name="__tabbed_35" type="radio" /><input id="__tabbed_35_2" name="__tabbed_35" type="radio" /><div class="tabbed-labels"><label for="__tabbed_35_1">HTML</label><label for="__tabbed_35_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://picsum.photos/300/200&quot;</span> 
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>     <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Imatge aleatòria&quot;</span><span class="p">/&gt;</span>
+</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://picsum.photos/300/200&quot;</span> 
+</span><span id="__span-50-4"><a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a>     <span class="na">width</span><span class="o">=</span><span class="s">&quot;200&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Imatge aleatòria&quot;</span><span class="p">/&gt;</span>
+</span><span id="__span-50-5"><a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://picsum.photos/300/200&quot;</span> 
+</span><span id="__span-50-6"><a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a>     <span class="na">width</span><span class="o">=</span><span class="s">&quot;30%&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Imatge aleatòria&quot;</span><span class="p">/&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div style="margin:0px; padding: 0px; float:left">
+<a class="glightbox" href="http://picsum.photos/300/200" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="http://picsum.photos/300/200" alt="Imatge aleatòria"/></a>
+<a class="glightbox" href="http://picsum.photos/300/200" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="http://picsum.photos/300/200" width="200" height="100" alt="Imatge aleatòria"/></a>
+<a class="glightbox" href="http://picsum.photos/300/200" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="http://picsum.photos/300/200" width="30%" alt="Imatge aleatòria"/></a>
+</div></p>
+</div>
+</div>
+</div>
+<h4 id="imatges-amb-hipervincles">Imatges amb hipervincles</h4>
+<p>En el cas dels hipervincles podem utilitzar una imatge per a substituir el text.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="36:1"><input checked="checked" id="__tabbed_36_1" name="__tabbed_36" type="radio" /><div class="tabbed-labels"><label for="__tabbed_36_1">HTML</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://portal.edu.gva.es/iesjaumeeljust/&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;logo_ieseljust.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;IES El Just&quot;</span><span class="p">/&gt;</span>
+</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="marcs">Marcs</h3>
+<p>L’element <code>iframe</code> ens permet emmarcar un rectangle que al mateix moment allotja un altra web. Els seus atributs són <code>src</code> per a indicar l’adreça del lloc que volem mostrar i <code>width</code> i <code>height</code> per a l’amplada i altura del marc. Si el document a mostrar és més gran que el propi marc, automàticament apareixeran les barres de desplaçament vertical i horitzontal en funció de les necessitats.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="37:2"><input checked="checked" id="__tabbed_37_1" name="__tabbed_37" type="radio" /><input id="__tabbed_37_2" name="__tabbed_37" type="radio" /><div class="tabbed-labels"><label for="__tabbed_37_1">HTML</label><label for="__tabbed_37_2">Resultat</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-html highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://portal.edu.gva.es/iesjaumeeljust/&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;500&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span><span class="p">/&gt;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<iframe src="https://portal.edu.gva.es/iesjaumeeljust/" width="500" height="500"/>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
